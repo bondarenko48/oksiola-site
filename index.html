@@ -1,0 +1,4291 @@
+﻿<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Oksi&amp;Ola Salon Nowogard — manicure, pedicure, przedłużanie rzęs, usługi fryzjerskie"
+    />
+    <title>Oksi&amp;Ola Salon | Nowogard</title>
+    <link rel="icon" href="images/fav.icon.png" type="image/png" />
+    <!-- Google Fonts: Playfair Display (headings) + Lato (body text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ============================================================
+         VARIABLES
+      ============================================================ */
+      :root {
+        --cream: #faf8f3;
+        --beige: #f2e9da;
+        --beige-mid: #e6d9c6;
+        --gold: #c9a84c;
+        --gold-lt: #e8d59e;
+        --gold-dk: #9e7b28;
+        --dark: #1c1208;
+        --text: #3b2d1a;
+        --muted: #7b6b52;
+        --white: #ffffff;
+        --shadow-sm: 0 2px 16px rgba(28, 18, 8, 0.07);
+        --shadow-md: 0 8px 40px rgba(28, 18, 8, 0.13);
+        --ff-s: "Playfair Display", Georgia, serif;
+        --ff-n: "Lato", "Segoe UI", Arial, sans-serif;
+        --r: 8px;
+        --tr: all 0.35s ease;
+        --hh: 78px;
+        --mw: 1160px;
+      }
+
+      /* ============================================================
+         RESET & BASE
+      ============================================================ */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--ff-n);
+        background: var(--cream);
+        color: var(--text);
+        line-height: 1.72;
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      button {
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-family: inherit;
+      }
+      input,
+      textarea,
+      select {
+        font-family: inherit;
+      }
+
+      /* ============================================================
+         LAYOUT UTILITIES
+      ============================================================ */
+      .wrap {
+        max-width: var(--mw);
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      .sec {
+        padding: 96px 0;
+      }
+      .sec-alt {
+        background: var(--beige);
+      }
+
+      .sh {
+        text-align: center;
+        margin-bottom: 64px;
+      }
+      .sh-tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+        display: block;
+      }
+      .sh-line {
+        width: 52px;
+        height: 1.5px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+        margin: 0 auto 20px;
+      }
+      .sh-title {
+        font-family: var(--ff-s);
+        font-size: clamp(1.9rem, 4vw, 2.7rem);
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 16px;
+        line-height: 1.2;
+      }
+      .sh-desc {
+        font-size: 1rem;
+        color: var(--muted);
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      /* fade-in */
+      .fi {
+        opacity: 0;
+        transform: translateY(26px);
+        transition:
+          opacity 0.65s ease,
+          transform 0.65s ease;
+      }
+      .fi.on {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* buttons */
+      .btn {
+        display: inline-block;
+        padding: 14px 38px;
+        border-radius: var(--r);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition: var(--tr);
+        white-space: nowrap;
+      }
+      .btn-g {
+        background: var(--gold);
+        color: var(--white);
+        box-shadow: 0 4px 22px rgba(201, 168, 76, 0.35);
+      }
+      .btn-g:hover {
+        background: var(--gold-dk);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 28px rgba(201, 168, 76, 0.5);
+      }
+      .btn-o {
+        border: 1.5px solid rgba(255, 255, 255, 0.55);
+        color: var(--white);
+      }
+      .btn-o:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      /* ============================================================
+         HEADER — floating transparent luxury glassmorphism
+      ============================================================ */
+      #hdr {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 900;
+        height: var(--hh);
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-bottom: 1px solid transparent;
+        box-shadow: none;
+        transition:
+          background 0.42s ease,
+          backdrop-filter 0.42s ease,
+          box-shadow 0.42s ease,
+          border-color 0.42s ease,
+          transform 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      #hdr.sc {
+        background: rgba(255, 240, 246, 0.52);
+        backdrop-filter: blur(22px) saturate(170%) brightness(103%);
+        -webkit-backdrop-filter: blur(22px) saturate(170%) brightness(103%);
+        box-shadow:
+          0 2px 28px rgba(196, 148, 182, 0.14),
+          inset 0 -1px 0 rgba(255, 255, 255, 0.5);
+        border-bottom-color: rgba(255, 210, 228, 0.38);
+      }
+      #hdr.hdr-hidden {
+        transform: translateY(-100%);
+      }
+      .hdr-in {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: var(--hh);
+        gap: 20px;
+      }
+
+      /* logo */
+      .logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .logo-img {
+        height: 66px;
+        width: auto;
+        max-width: 280px;
+        object-fit: contain;
+        display: block;
+        filter: drop-shadow(0 1px 6px rgba(255, 255, 255, 0.25));
+        transition: filter 0.42s ease;
+      }
+      #hdr.sc .logo-img {
+        filter: none;
+      }
+
+      /* nav */
+      .nav-ul {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+      .nav-ul a {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+        transition: color 0.3s, text-shadow 0.3s;
+        position: relative;
+      }
+      .nav-ul a::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s;
+      }
+      .nav-ul a:hover {
+        color: var(--gold-lt);
+        text-shadow: none;
+      }
+      .nav-ul a:hover::after {
+        transform: scaleX(1);
+      }
+      #hdr.sc .nav-ul a {
+        color: var(--text);
+        text-shadow: none;
+      }
+      #hdr.sc .nav-ul a:hover {
+        color: var(--gold);
+      }
+
+      /* right side */
+      .hdr-r {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      /* language switcher */
+      .ls {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+      }
+      .ls-btn {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: rgba(255, 255, 255, 0.75);
+        padding: 5px 9px;
+        border-radius: 4px;
+        transition: color 0.3s, background 0.3s;
+      }
+      .ls-btn.act {
+        color: var(--gold-lt);
+        background: rgba(255, 255, 255, 0.12);
+      }
+      .ls-btn:hover {
+        color: rgba(255, 255, 255, 0.98);
+      }
+      .ls-sep {
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.8rem;
+      }
+      #hdr.sc .ls-btn {
+        color: var(--muted);
+      }
+      #hdr.sc .ls-btn.act {
+        color: var(--gold);
+        background: rgba(201, 168, 76, 0.15);
+      }
+      #hdr.sc .ls-sep {
+        color: var(--beige-mid);
+      }
+
+      /* hamburger */
+      .hbg {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        width: 28px;
+        padding: 4px 0;
+      }
+      .hbg span {
+        display: block;
+        height: 1.5px;
+        background: rgba(255, 255, 255, 0.9);
+        transition: var(--tr);
+        border-radius: 2px;
+      }
+      #hdr.sc .hbg span {
+        background: var(--dark);
+      }
+      .hbg.op span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      .hbg.op span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .hbg.op span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+
+      /* mobile nav overlay */
+      #mnav {
+        display: none;
+        position: fixed;
+        top: var(--hh);
+        left: 0;
+        right: 0;
+        z-index: 899;
+        background: rgba(255, 242, 248, 0.96);
+        backdrop-filter: blur(22px) saturate(160%);
+        -webkit-backdrop-filter: blur(22px) saturate(160%);
+        border-bottom: 1px solid rgba(255, 210, 228, 0.4);
+        box-shadow: 0 8px 32px rgba(196, 148, 182, 0.18);
+        padding: 16px 0 24px;
+        animation: slideDown 0.3s ease;
+      }
+      #mnav.show {
+        display: block;
+      }
+      #mnav .nav-ul {
+        flex-direction: column;
+        gap: 0;
+        align-items: stretch;
+      }
+      #mnav .nav-ul a {
+        color: var(--text);
+        padding: 14px 28px;
+        border-bottom: 1px solid rgba(255, 210, 228, 0.28);
+        display: block;
+      }
+      #mnav .nav-ul a:hover {
+        color: var(--gold);
+        background: rgba(255, 230, 242, 0.45);
+      }
+      #mnav .nav-ul a::after {
+        display: none;
+      }
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* ============================================================
+         HERO
+      ============================================================ */
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        background: url("images/hero.jpg") center/cover no-repeat;
+      }
+      .hero-ov {
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 245, 235, 0.18);
+        opacity: 1;
+      }
+      .hero-cnt {
+        transform: translateX(-90px);
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: calc(var(--hh) + 48px) 28px 64px;
+        max-width: 800px;
+      }
+      .hero-tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 22px;
+        opacity: 0;
+        animation: fu 0.8s 0.2s forwards;
+      }
+      .hero-h1 {
+        font-family: var(--ff-s);
+        font-size: clamp(2.5rem, 7vw, 4.8rem);
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.15;
+        margin-bottom: 28px;
+        opacity: 0;
+        animation: fu 0.8s 0.4s forwards;
+      }
+      .hero-h1 span {
+        color: rgba(255, 220, 220, 1);
+        text-shadow: 0 2px 10px rgba(255, 255, 255, 0.35);
+      }
+      .hero-h1 em {
+        color: var(--gold);
+        font-style: italic;
+        display: block;
+      }
+      .hero-sub {
+        font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+        color: rgba(255, 255, 255, 0.62);
+        max-width: 520px;
+        margin: 0 auto 46px;
+        font-weight: 300;
+        line-height: 1.82;
+        opacity: 0;
+        animation: fu 0.8s 0.6s forwards;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 14px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-top: -45px;
+        margin-left: 320px;
+        opacity: 0;
+        position: relative;
+        z-index: 10;
+        animation: fu 0.8s 0.8s forwards;
+      }
+      .hero-scroll {
+        position: absolute;
+        bottom: 34px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        opacity: 0;
+        animation: fd 1s 1.2s forwards;
+      }
+      .hero-scroll span {
+        display: block;
+        width: 22px;
+        height: 36px;
+        border: 1.5px solid rgba(201, 168, 76, 0.5);
+        border-radius: 14px;
+        position: relative;
+      }
+      .hero-scroll span::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: 7px;
+        background: var(--gold);
+        border-radius: 2px;
+        animation: sd 1.9s infinite;
+      }
+      @keyframes fu {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes fd {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.8;
+        }
+      }
+      @keyframes sd {
+        0%,
+        100% {
+          opacity: 1;
+          top: 6px;
+        }
+        50% {
+          opacity: 0;
+          top: 18px;
+        }
+      }
+
+      /* ============================================================
+         SERVICES
+      ============================================================ */
+      .srv-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+      }
+      .srv-grid .srv-card:nth-child(5) {
+        grid-column: 2;
+      }
+      .srv-grid .srv-card:nth-child(6) {
+        grid-column: 3;
+      }
+      .srv-card {
+        background: linear-gradient(
+          145deg,
+          rgba(255, 252, 254, 0.94) 0%,
+          rgba(255, 248, 252, 0.88) 100%
+        );
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 16px;
+        padding: 32px 28px 36px;
+        box-shadow:
+          0 2px 20px rgba(196, 148, 182, 0.12),
+          0 1px 4px rgba(196, 148, 182, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        transition: var(--tr);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .srv-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          rgba(232, 196, 220, 0.5),
+          var(--gold),
+          rgba(232, 196, 220, 0.5)
+        );
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.4s;
+      }
+      .srv-card:hover {
+        transform: translateY(-6px);
+        box-shadow:
+          0 8px 32px rgba(196, 148, 182, 0.22),
+          0 2px 8px rgba(196, 148, 182, 0.1);
+      }
+      .srv-card:hover::before {
+        transform: scaleX(1);
+      }
+      .srv-thumb {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 22px;
+        border: 2.5px solid rgba(255, 255, 255, 0.95);
+        box-shadow:
+          0 0 0 5px rgba(249, 213, 229, 0.28),
+          0 4px 20px rgba(196, 148, 182, 0.22);
+        flex-shrink: 0;
+      }
+      .srv-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.55s ease;
+      }
+      .srv-card:hover .srv-thumb img {
+        transform: scale(1.1);
+      }
+      .srv-card h3 {
+        font-family: var(--ff-s);
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 12px;
+      }
+      .srv-card p {
+        font-size: 0.91rem;
+        color: var(--muted);
+        line-height: 1.78;
+      }
+
+      /* ============================================================
+         ADVANTAGES
+      ============================================================ */
+      .adv-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 32px;
+      }
+      .adv-item {
+        text-align: center;
+        padding: 20px 16px;
+      }
+      .adv-ico {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          rgba(249, 228, 236, 0.85) 0%,
+          rgba(232, 212, 244, 0.75) 100%
+        );
+        border: 1px solid rgba(210, 168, 190, 0.35);
+        box-shadow:
+          0 4px 20px rgba(196, 148, 182, 0.22),
+          inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 22px;
+        color: #9a6070;
+      }
+      .adv-ico svg {
+        width: 26px;
+        height: 26px;
+        flex-shrink: 0;
+      }
+      .adv-item h3 {
+        font-family: var(--ff-s);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 12px;
+      }
+      .adv-item p {
+        font-size: 0.91rem;
+        color: var(--muted);
+        line-height: 1.78;
+      }
+
+      /* ============================================================
+         PORTFOLIO
+      ============================================================ */
+      .port-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .port-card {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+        cursor: pointer;
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        display: block;
+        text-decoration: none;
+        color: inherit;
+      }
+      .port-card:hover {
+        transform: scale(1.03);
+        box-shadow:
+          0 12px 40px rgba(196, 148, 182, 0.3),
+          0 4px 16px rgba(28, 18, 8, 0.12);
+        z-index: 1;
+      }
+      /* photo / placeholder */
+      .port-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .port-card:hover .port-img {
+        transform: scale(1.06);
+      }
+      /* gradient placeholder colors — will be hidden once real images are added */
+      .port-card:nth-child(1) .port-img {
+        background: linear-gradient(135deg, #1c0d06, #6b3520, #a06030);
+      }
+      .port-card:nth-child(2) .port-img {
+        background: linear-gradient(135deg, #3d0a22, #8b1a4a, #c06090);
+      }
+      .port-card:nth-child(3) .port-img {
+        background: linear-gradient(135deg, #0a1a1c, #1a5060, #30809a);
+      }
+      .port-card:nth-child(4) .port-img {
+        background: linear-gradient(135deg, #1c1006, #3d2a0e, #7a5525);
+      }
+      .port-card:nth-child(5) .port-img {
+        background: linear-gradient(135deg, #1a0a30, #4a1878, #8050b8);
+      }
+      .port-card:nth-child(6) .port-img {
+        background: linear-gradient(135deg, #0a1a10, #204a30, #3a8060);
+      }
+      /* gradient label line */
+      .port-lbl {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.72) 0%,
+          transparent 100%
+        );
+        padding: 36px 20px 18px;
+        z-index: 2;
+      }
+      .port-lbl h3 {
+        font-family: var(--ff-s);
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--white);
+      }
+      .port-lbl p {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.65);
+        margin-top: 3px;
+      }
+
+      /* ============================================================
+         PRICES
+      ============================================================ */
+      .pr-tabs {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0;
+        border: 1.5px solid rgba(201, 168, 76, 0.3);
+        border-radius: 50px;
+        width: fit-content;
+        margin: 0 auto 48px;
+        overflow: hidden;
+      }
+      .pr-tab {
+        padding: 12px 28px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        transition: var(--tr);
+        background: transparent;
+      }
+      .pr-tab.act {
+        background: var(--gold);
+        color: var(--white);
+      }
+      .pr-tab:hover:not(.act) {
+        color: var(--gold);
+      }
+      .pr-pnl {
+        display: none;
+      }
+      .pr-pnl.act {
+        display: block;
+      }
+      .pr-list {
+        max-width: 660px;
+        margin: 0 auto;
+      }
+      .pr-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 15px 0;
+        border-bottom: 1px dashed rgba(201, 168, 76, 0.2);
+      }
+      .pr-row:last-child {
+        border-bottom: none;
+      }
+      .pr-name {
+        font-size: 0.96rem;
+        color: var(--text);
+      }
+      .pr-val {
+        font-family: var(--ff-s);
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--gold);
+        white-space: nowrap;
+        margin-left: 16px;
+      }
+      .pr-note {
+        text-align: center;
+        margin-top: 32px;
+        font-size: 0.84rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      /* ============================================================
+         STERILITY & SAFETY
+      ============================================================ */
+      .ster-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+      }
+      /* Full-width centered video blocks */
+      .ster-vid-full {
+        width: 100%;
+        max-width: 1000px;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1.5px solid rgba(201, 168, 76, 0.25);
+        box-shadow: var(--shadow-md);
+        position: relative;
+        background: var(--dark);
+      }
+      .ster-vid-full video {
+        width: 100%;
+        display: block;
+        border-radius: 16px;
+      }
+      /* Text blocks max-width container */
+      .ster-text-col {
+        width: 100%;
+        max-width: 800px;
+      }
+      .ster-img-ph {
+        text-align: center;
+        padding: 32px;
+        position: relative;
+        z-index: 1;
+      }
+      .ster-img-ph-icon {
+        font-size: 3.2rem;
+        display: block;
+        margin-bottom: 18px;
+        opacity: 0.55;
+      }
+      .ster-img-ph-text {
+        font-family: var(--ff-s);
+        font-size: 1rem;
+        color: var(--muted);
+        line-height: 1.65;
+        font-style: italic;
+      }
+      .ster-badge-img {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--white);
+        border-radius: 50px;
+        padding: 8px 22px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold-dk);
+        border: 1.5px solid rgba(201, 168, 76, 0.4);
+        white-space: nowrap;
+        box-shadow: var(--shadow-sm);
+        z-index: 2;
+      }
+      .ster-points {
+        display: flex;
+        flex-direction: column;
+        gap: 34px;
+      }
+      .ster-point {
+        display: flex;
+        gap: 22px;
+        align-items: flex-start;
+      }
+      .ster-ico {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(249, 228, 236, 0.85) 0%,
+          rgba(232, 212, 244, 0.75) 100%
+        );
+        border: 1px solid rgba(210, 168, 190, 0.35);
+        box-shadow:
+          0 2px 14px rgba(196, 148, 182, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #9a6070;
+      }
+      .ster-ico svg {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+      }
+      .ster-point-body h3 {
+        font-family: var(--ff-s);
+        font-size: 1.08rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 9px;
+        line-height: 1.4;
+      }
+      .ster-point-body p {
+        font-size: 0.91rem;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .ster-trust-bar {
+        margin-top: 44px;
+        padding: 22px 28px;
+        background: linear-gradient(
+          135deg,
+          rgba(201, 168, 76, 0.1),
+          rgba(201, 168, 76, 0.04)
+        );
+        border-radius: var(--r);
+        border: 1.5px solid rgba(201, 168, 76, 0.22);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .ster-trust-bar-icon {
+        font-size: 1.7rem;
+        flex-shrink: 0;
+      }
+      .ster-trust-bar p {
+        font-size: 0.89rem;
+        color: var(--text);
+        line-height: 1.68;
+        font-style: italic;
+      }
+      .ster-trust-bar strong {
+        color: var(--gold-dk);
+        font-style: normal;
+        font-weight: 700;
+      }
+      .ster-vid-badge {
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+        background: rgba(42, 20, 35, 0.75);
+        color: rgba(255, 248, 240, 0.95);
+        font-size: 0.67rem;
+        font-family: var(--ff-n);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 4px 11px;
+        border-radius: 5px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: 2;
+        white-space: nowrap;
+      }
+
+      /* ============================================================
+         REVIEWS
+      ============================================================ */
+      .rev-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 28px;
+      }
+      .rev-card {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 36px 30px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(201, 168, 76, 0.1);
+        position: relative;
+      }
+      .rev-card::before {
+        content: "\201C";
+        font-family: var(--ff-s);
+        font-size: 5rem;
+        line-height: 1;
+        color: var(--gold);
+        opacity: 0.12;
+        position: absolute;
+        top: 14px;
+        left: 22px;
+        pointer-events: none;
+      }
+      .rev-stars {
+        display: flex;
+        gap: 3px;
+        margin-bottom: 18px;
+      }
+      .rev-stars span {
+        color: var(--gold);
+        font-size: 0.95rem;
+      }
+      .rev-txt {
+        font-size: 0.94rem;
+        color: var(--text);
+        line-height: 1.82;
+        font-style: italic;
+        margin-bottom: 24px;
+        position: relative;
+        z-index: 1;
+      }
+      .rev-auth {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .rev-av {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dk));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--ff-s);
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--white);
+      }
+      .rev-name {
+        font-weight: 700;
+        font-size: 0.92rem;
+        color: var(--dark);
+      }
+      .rev-date {
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+
+      /* ============================================================
+         CONTACT
+      ============================================================ */
+      .con-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .con-item {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        margin-bottom: 30px;
+      }
+      .con-ico {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(249, 228, 236, 0.72) 0%,
+          rgba(232, 212, 244, 0.62) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(210, 168, 190, 0.42);
+        box-shadow:
+          0 2px 12px rgba(196, 148, 182, 0.16),
+          inset 0 1px 0 rgba(255, 255, 255, 0.92);
+        color: #9a6070;
+      }
+      .con-ico svg {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+      }
+      .con-lbl {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 5px;
+      }
+      .con-val {
+        font-size: 0.96rem;
+        color: var(--text);
+        line-height: 1.65;
+      }
+      .con-val a {
+        color: var(--text);
+        transition: color 0.3s;
+      }
+      .con-val a:hover {
+        color: var(--gold);
+      }
+      .soc {
+        display: flex;
+        gap: 12px;
+        margin-top: 32px;
+      }
+      .soc-a {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(201, 168, 76, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--muted);
+        transition: var(--tr);
+      }
+      .soc-a:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      /* map */
+      .map-wrap {
+        margin-top: 32px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1.5px solid rgba(201, 168, 76, 0.2);
+        box-shadow: var(--shadow-sm);
+        height: 200px;
+      }
+      .map-wrap iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+
+      /* form */
+      .con-form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .f-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .f-grp {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      .f-lbl {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .f-in,
+      .f-ta,
+      .f-sel {
+        padding: 13px 17px;
+        border: 1.5px solid var(--beige-mid);
+        border-radius: var(--r);
+        background: var(--cream);
+        font-size: 0.94rem;
+        color: var(--text);
+        outline: none;
+        width: 100%;
+        transition:
+          border-color 0.3s,
+          box-shadow 0.3s;
+      }
+      .f-in:focus,
+      .f-ta:focus,
+      .f-sel:focus {
+        border-color: var(--gold);
+        box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+      }
+      .f-ta {
+        resize: vertical;
+        min-height: 116px;
+      }
+      .f-ok {
+        display: none;
+        padding: 14px 20px;
+        background: rgba(201, 168, 76, 0.1);
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        border-radius: var(--r);
+        font-size: 0.91rem;
+        color: var(--gold-dk);
+      }
+
+      /* ============================================================
+         REVIEWS — empty state
+      ============================================================ */
+      .rev-empty {
+        text-align: center;
+        padding: 56px 40px;
+        background: var(--white);
+        border-radius: 12px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(201, 168, 76, 0.12);
+        max-width: 580px;
+        margin: 0 auto;
+      }
+      .rev-empty-heart {
+        font-size: 2.4rem;
+        display: block;
+        margin-bottom: 18px;
+      }
+      .rev-empty p {
+        font-family: var(--ff-s);
+        font-size: 1.18rem;
+        font-style: italic;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      /* ============================================================
+         PORTFOLIO — photo placeholder overlay
+      ============================================================ */
+      .port-add {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        pointer-events: none;
+      }
+      .port-add-icon {
+        font-size: 2rem;
+        opacity: 0.32;
+      }
+      .port-add-txt {
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.32);
+      }
+
+      /* ============================================================
+         CONTACT — action buttons
+      ============================================================ */
+      .con-act-intro {
+        font-family: var(--ff-s);
+        font-size: 1.1rem;
+        font-style: italic;
+        color: var(--muted);
+        margin-bottom: 30px;
+        line-height: 1.65;
+      }
+      .con-act-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+      .con-act-btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 18px;
+        border-radius: var(--r);
+        font-family: var(--ff-n);
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        transition: var(--tr);
+        text-decoration: none;
+        color: var(--white);
+      }
+      .con-act-btn:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.08);
+      }
+      .con-act-btn svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        opacity: 0.95;
+      }
+      .con-act-phone {
+        background: var(--dark);
+        box-shadow: 0 4px 22px rgba(28, 18, 8, 0.3);
+      }
+      .con-act-phone:hover {
+        background: #2e1f0d;
+        box-shadow: 0 6px 30px rgba(28, 18, 8, 0.45);
+      }
+      .con-act-wa {
+        background: #25d366;
+        box-shadow: 0 4px 22px rgba(37, 211, 102, 0.25);
+      }
+      .con-act-wa:hover {
+        background: #1ea855;
+        box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+      }
+      .con-act-msg {
+        background: linear-gradient(135deg, #0084ff 0%, #a334fa 100%);
+        box-shadow: 0 4px 22px rgba(0, 132, 255, 0.28);
+      }
+      .con-act-msg:hover {
+        opacity: 0.9;
+        box-shadow: 0 6px 30px rgba(0, 132, 255, 0.42);
+      }
+      .con-act-fb {
+        background: #1877f2;
+        box-shadow: 0 4px 22px rgba(24, 119, 242, 0.25);
+      }
+      .con-act-fb:hover {
+        background: #1464cc;
+        box-shadow: 0 6px 30px rgba(24, 119, 242, 0.4);
+      }
+      .con-act-maps {
+        background: #1a7340;
+        box-shadow: 0 4px 22px rgba(26, 115, 64, 0.28);
+      }
+      .con-act-maps:hover {
+        background: #145c33;
+        box-shadow: 0 6px 30px rgba(26, 115, 64, 0.42);
+      }
+      .con-act-ig {
+        background: linear-gradient(
+          135deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        box-shadow: 0 4px 22px rgba(220, 39, 67, 0.25);
+      }
+      .con-act-ig:hover {
+        opacity: 0.88;
+        box-shadow: 0 6px 30px rgba(220, 39, 67, 0.4);
+      }
+      .con-act-note {
+        font-size: 0.82rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      /* ============================================================
+         CONTACT SECTION — Hero-inspired premium redesign
+      ============================================================ */
+      #contact {
+        background: linear-gradient(
+          135deg,
+          #fef6f9 0%,
+          #f8eef6 30%,
+          #fef3ec 65%,
+          #fdf6f9 100%
+        );
+        position: relative;
+        overflow: hidden;
+        padding: 76px 0;
+      }
+      #contact .sh {
+        margin-bottom: 44px;
+      }
+      #contact .con-item {
+        margin-bottom: 18px;
+      }
+      #contact .con-act-intro {
+        margin-bottom: 20px;
+      }
+      #contact::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse at 15% 25%,
+            rgba(232, 196, 220, 0.38) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse at 85% 75%,
+            rgba(216, 196, 240, 0.32) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse at 55% 10%,
+            rgba(255, 228, 200, 0.28) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 30% 85%,
+            rgba(240, 208, 228, 0.22) 0%,
+            transparent 48%
+          );
+        pointer-events: none;
+        z-index: 0;
+      }
+      #contact .wrap {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Glassmorphism contact info cards */
+      #contact .con-item {
+        background: rgba(255, 252, 254, 0.72);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        border-radius: 14px;
+        padding: 16px 20px;
+        box-shadow:
+          0 2px 18px rgba(196, 148, 182, 0.13),
+          inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      }
+
+      /* Rose-gold icon circles — contact section override */
+      #contact .con-ico {
+        background: linear-gradient(
+          135deg,
+          rgba(252, 230, 240, 0.78) 0%,
+          rgba(232, 210, 248, 0.65) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        box-shadow:
+          0 2px 14px rgba(196, 148, 182, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 1);
+        color: #8a4a72;
+      }
+
+      /* Unified glass CTA buttons — overrides all traffic-light colors */
+      #contact .con-act-btn,
+      #contact .con-act-phone,
+      #contact .con-act-wa,
+      #contact .con-act-msg,
+      #contact .con-act-fb,
+      #contact .con-act-maps,
+      #contact .con-act-ig {
+        background: rgba(255, 252, 254, 0.62);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1.5px solid rgba(255, 255, 255, 0.88);
+        box-shadow:
+          0 4px 22px rgba(196, 148, 182, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        color: #6a3a58;
+        background-image: linear-gradient(
+          135deg,
+          rgba(255, 240, 248, 0.7) 0%,
+          rgba(248, 236, 255, 0.55) 50%,
+          rgba(255, 243, 232, 0.65) 100%
+        );
+      }
+      #contact .con-act-btn:hover,
+      #contact .con-act-phone:hover,
+      #contact .con-act-wa:hover,
+      #contact .con-act-msg:hover,
+      #contact .con-act-fb:hover,
+      #contact .con-act-maps:hover,
+      #contact .con-act-ig:hover {
+        background-image: linear-gradient(
+          135deg,
+          rgba(255, 228, 244, 0.85) 0%,
+          rgba(240, 220, 255, 0.72) 50%,
+          rgba(255, 236, 216, 0.82) 100%
+        );
+        border-color: rgba(196, 148, 182, 0.55);
+        box-shadow:
+          0 6px 30px rgba(196, 148, 182, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 1);
+        color: #5a2848;
+        transform: translateY(-2px);
+      }
+      #contact .con-act-btn svg {
+        opacity: 0.85;
+      }
+
+      /* Premium pearl QR frame */
+      .qr-frame {
+        border: 1.5px solid rgba(196, 164, 196, 0.45);
+        background: rgba(255, 252, 254, 0.92);
+        box-shadow:
+          0 4px 24px rgba(196, 148, 182, 0.22),
+          0 0 0 6px rgba(249, 213, 229, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 1);
+      }
+      .qr-caption {
+        color: #8a5a78;
+        font-size: 0.78rem;
+        letter-spacing: 0.03em;
+      }
+
+      /* Premium hours list */
+      .hrs-list {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .hrs-row {
+        font-size: 0.9rem;
+        color: var(--text);
+      }
+      .hrs-row-rest {
+        color: #8a5a78;
+        font-style: italic;
+      }
+
+      /* ============================================================
+         MAP placeholder
+      ============================================================ */
+      .map-ph {
+        margin-top: 32px;
+        border-radius: 10px;
+        border: 1.5px dashed rgba(201, 168, 76, 0.35);
+        background: linear-gradient(135deg, var(--beige), var(--beige-mid));
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        box-shadow: var(--shadow-sm);
+        padding: 24px;
+        text-align: center;
+      }
+      .map-ph-icon {
+        font-size: 2.4rem;
+        opacity: 0.55;
+      }
+      .map-ph-city {
+        font-family: var(--ff-s);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+      .map-ph-hint {
+        font-size: 0.76rem;
+        color: var(--muted);
+        line-height: 1.65;
+        max-width: 320px;
+      }
+
+      /* QR Code block */
+      .qr-block {
+        margin-top: 32px;
+        text-align: center;
+      }
+      .qr-anchor {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .qr-frame {
+        width: 180px;
+        height: 180px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1.5px solid rgba(201, 168, 76, 0.4);
+        box-shadow: var(--shadow-sm);
+        background: var(--white);
+        position: relative;
+      }
+      .qr-obj {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+        pointer-events: none;
+      }
+      .qr-caption {
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--gold);
+        transition: opacity 0.2s;
+      }
+      .qr-anchor:hover .qr-caption {
+        opacity: 0.7;
+      }
+
+      /* ============================================================
+         FOOTER
+      ============================================================ */
+      #ftr {
+        background: var(--dark);
+        padding: 48px 0;
+        text-align: center;
+      }
+      .ftr-logo {
+        font-family: var(--ff-s);
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 6px;
+      }
+      .ftr-logo .amp {
+        color: var(--gold);
+      }
+      .ftr-sub {
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.28);
+        margin-bottom: 26px;
+      }
+      .ftr-line {
+        width: 52px;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+        margin: 0 auto 26px;
+      }
+      .ftr-txt {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.32);
+        line-height: 1.85;
+      }
+      .ftr-txt a {
+        color: var(--gold);
+        opacity: 0.65;
+        transition: opacity 0.3s;
+      }
+      .ftr-txt a:hover {
+        opacity: 1;
+      }
+
+      /* ============================================================
+         RESPONSIVE
+      ============================================================ */
+      @media (max-width: 920px) {
+        :root {
+          --hh: 68px;
+        }
+        .logo-img {
+          height: 54px;
+          max-width: 230px;
+        }
+        .sec {
+          padding: 72px 0;
+        }
+        .nav-ul {
+          display: none;
+        }
+        .hbg {
+          display: flex;
+        }
+        .con-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .port-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .srv-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .srv-grid .srv-card:nth-child(5),
+        .srv-grid .srv-card:nth-child(6) {
+          grid-column: auto;
+        }
+        /* Hero: reset desktop offset, works for all widths ≤ 920px */
+        .hero-cnt {
+          transform: none;
+          padding: calc(var(--hh) + 36px) 24px 56px;
+          max-width: 100%;
+        }
+        .hero-btns {
+          margin-top: 0;
+          margin-left: 0;
+          justify-content: center;
+        }
+      }
+      @media (max-width: 600px) {
+        .logo-img {
+          height: 46px;
+          max-width: 190px;
+        }
+        .sec {
+          padding: 56px 0;
+        }
+        .wrap {
+          padding: 0 16px;
+        }
+        .srv-grid {
+          grid-template-columns: 1fr;
+        }
+        .port-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .pr-tabs {
+          flex-direction: column;
+          border-radius: 10px;
+          width: 100%;
+        }
+        .pr-tab {
+          text-align: center;
+        }
+        .f-row {
+          grid-template-columns: 1fr;
+        }
+        .hero-cnt {
+          padding: calc(var(--hh) + 20px) 16px 40px;
+        }
+        .hero-btns {
+          flex-direction: column;
+          align-items: center;
+          margin-left: 0;
+          margin-top: 0;
+        }
+        .btn {
+          width: 100%;
+          max-width: 300px;
+          text-align: center;
+        }
+        .rev-grid {
+          grid-template-columns: 1fr;
+        }
+        .con-act-wrap {
+          grid-template-columns: 1fr;
+        }
+        .adv-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 430px) {
+        .logo-img {
+          height: 44px;
+          max-width: 90px;
+        }
+        .hero-h1 {
+          font-size: clamp(2rem, 9vw, 3.2rem);
+        }
+        .hero-sub {
+          font-size: 0.9rem;
+        }
+      }
+      @media (max-width: 380px) {
+        .port-grid {
+          grid-template-columns: 1fr;
+        }
+        .adv-grid {
+          grid-template-columns: 1fr;
+        }
+        .wrap {
+          padding: 0 12px;
+        }
+      }
+
+      /* ── nav dropdown ── */
+      .nav-dd-wrap {
+        position: relative;
+      }
+      .nav-sub {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: -18px;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 245, 240, 0.94) 0%,
+          rgba(252, 240, 248, 0.9) 100%
+        );
+        backdrop-filter: blur(24px) saturate(200%);
+        -webkit-backdrop-filter: blur(24px) saturate(200%);
+        border-radius: 14px;
+        box-shadow:
+          0 16px 48px rgba(180, 100, 130, 0.12),
+          0 4px 16px rgba(201, 168, 76, 0.1),
+          0 1px 0 rgba(255, 255, 255, 0.85) inset;
+        border: 1px solid rgba(230, 200, 215, 0.45);
+        min-width: 228px;
+        padding: 10px 0;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px) scale(0.97);
+        transform-origin: top left;
+        transition:
+          opacity 0.28s ease,
+          transform 0.28s ease;
+        z-index: 50;
+        list-style: none;
+      }
+      .nav-dd-wrap:hover .nav-sub {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+      .nav-sub li a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 11px 20px;
+        font-size: 0.73rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text) !important;
+        text-shadow: none !important;
+        transition:
+          color 0.2s,
+          background 0.2s,
+          padding-left 0.2s;
+        white-space: nowrap;
+      }
+      .nav-sub li a:hover {
+        color: var(--gold) !important;
+        background: rgba(201, 168, 76, 0.07);
+        padding-left: 24px;
+      }
+      .nav-sub li a::after {
+        display: none !important;
+      }
+      .nav-sub .ni {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 8px;
+        flex-shrink: 0;
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 1px 6px rgba(196, 148, 182, 0.18);
+        color: #b07898;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .nav-sub li a:hover .ni {
+        background: rgba(201, 168, 76, 0.12);
+        color: var(--gold);
+      }
+
+      /* ── service cards as links ── */
+      a.srv-card {
+        display: block;
+      }
+      .srv-more {
+        display: block;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--gold);
+        margin-top: 14px;
+        transition: color 0.3s;
+      }
+      a.srv-card:hover .srv-more {
+        color: var(--gold-dk);
+      }
+
+      /* ============================================================
+         FLOATING ACTION BUTTONS (FAB stack)
+      ============================================================ */
+      .fab-stack {
+        position: fixed;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 900;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+      .fab-btn {
+        position: relative;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background-image: linear-gradient(
+          135deg,
+          rgba(255, 240, 248, 0.72) 0%,
+          rgba(248, 236, 255, 0.58) 50%,
+          rgba(255, 243, 232, 0.68) 100%
+        );
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1.5px solid rgba(255, 255, 255, 0.85);
+        box-shadow:
+          0 4px 20px rgba(196, 148, 182, 0.22),
+          inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        color: #6a3a58;
+        transition:
+          transform 0.22s ease,
+          box-shadow 0.22s ease,
+          border-color 0.22s ease;
+        cursor: pointer;
+        font-family: var(--ff-n);
+        font-size: 0;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .fab-btn:hover {
+        transform: scale(1.13) translateX(-2px);
+        box-shadow:
+          0 6px 28px rgba(196, 148, 182, 0.38),
+          inset 0 1px 0 rgba(255, 255, 255, 1);
+        border-color: rgba(196, 148, 182, 0.5);
+        background-image: linear-gradient(
+          135deg,
+          rgba(255, 228, 244, 0.88) 0%,
+          rgba(240, 220, 255, 0.75) 50%,
+          rgba(255, 236, 216, 0.85) 100%
+        );
+      }
+      .fab-btn svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        pointer-events: none;
+      }
+      .fab-btn::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        right: calc(100% + 12px);
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(42, 20, 35, 0.86);
+        color: #fff8f4;
+        font-size: 0.72rem;
+        font-family: var(--ff-n);
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+        padding: 5px 11px;
+        border-radius: 7px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.18s ease;
+      }
+      .fab-btn:hover::after {
+        opacity: 1;
+      }
+      @media (max-width: 600px) {
+        .fab-stack {
+          right: 8px;
+          top: auto;
+          bottom: 18px;
+          transform: none;
+          gap: 8px;
+        }
+        .fab-btn {
+          width: 42px;
+          height: 42px;
+        }
+        .fab-btn::after {
+          display: none;
+        }
+      }
+
+      /* ============================================================
+         MOBILE HERO FIX
+      ============================================================ */
+      @media (max-width: 600px) {
+        #hero {
+          background-position: 65% top;
+        }
+      }
+      @media (max-width: 430px) {
+        #hero {
+          background-position: 60% top;
+        }
+      }
+
+      /* ============================================================
+         REVIEW FORM
+      ============================================================ */
+      .rev-form-wrap {
+        margin-top: 64px;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 248, 244, 0.94),
+          rgba(252, 240, 252, 0.88)
+        );
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(220, 190, 210, 0.35);
+        border-radius: 20px;
+        padding: 48px 48px 52px;
+        box-shadow: 0 8px 40px rgba(196, 148, 182, 0.12);
+        text-align: center;
+      }
+      .rev-form-wrap .sh {
+        margin-bottom: 36px;
+      }
+      .rev-form {
+        max-width: 580px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .rf-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      .rf-field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .rf-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .rf-input {
+        background: rgba(255, 255, 255, 0.75);
+        border: 1.5px solid rgba(210, 180, 200, 0.4);
+        border-radius: 10px;
+        padding: 12px 16px;
+        font-size: 0.93rem;
+        color: var(--text);
+        transition:
+          border-color 0.25s,
+          box-shadow 0.25s;
+        outline: none;
+        width: 100%;
+      }
+      .rf-input:focus {
+        border-color: rgba(201, 168, 76, 0.5);
+        box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+      }
+      .rf-textarea {
+        resize: vertical;
+        min-height: 110px;
+      }
+      .rf-stars {
+        display: flex;
+        gap: 6px;
+        padding: 8px 0;
+      }
+      .rf-stars span {
+        font-size: 1.55rem;
+        color: var(--beige-mid);
+        cursor: pointer;
+        transition:
+          color 0.15s,
+          transform 0.15s;
+        line-height: 1;
+      }
+      .rf-stars span.lit {
+        color: var(--gold);
+      }
+      .rf-stars span:hover {
+        transform: scale(1.2);
+      }
+      .rf-field-mb {
+        margin-bottom: 20px;
+      }
+      .rf-submit {
+        width: 100%;
+        margin-top: 8px;
+        padding: 16px;
+        font-size: 0.85rem;
+      }
+      .rf-thanks {
+        text-align: center;
+        margin-top: 14px;
+        font-size: 0.9rem;
+        color: var(--muted);
+        font-style: italic;
+        min-height: 1.4em;
+      }
+      @media (max-width: 560px) {
+        .rev-form-wrap {
+          padding: 32px 20px 36px;
+        }
+        .rf-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
+    <header id="hdr">
+      <div class="wrap hdr-in">
+        <a href="#hero" class="logo">
+          <picture>
+            <source
+              media="(max-width: 430px)"
+              srcset="images/compact logo.png"
+            />
+            <img
+              src="images/logo new.png"
+              alt="Oksi&amp;Ola Salon"
+              class="logo-img"
+            />
+          </picture>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav aria-label="Main navigation">
+          <ul class="nav-ul" id="dnav">
+            <li class="nav-dd-wrap">
+              <a href="#services" data-i18n="nav.s">Usługi</a>
+              <ul class="nav-sub">
+                <li>
+                  <a href="manicure/manicure.html"
+                    ><span class="ni"
+                      ><svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M8 17h8M8 21h8M12 3C9.8 3 8 4.8 8 7v6h8V7c0-2.2-1.8-4-4-4z"
+                        />
+                        <path d="M10 7h4" /></svg></span
+                    >Manicure</a
+                  >
+                </li>
+                <li>
+                  <a href="pedicure/pedicure_premium_oksi_ola.html"
+                    ><span class="ni"
+                      ><svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <ellipse cx="12" cy="8" rx="4" ry="5" />
+                        <path
+                          d="M8 13c-3 1-5 3.5-4 6 .5 1.5 2 2 4 1.5M16 13c3 1 5 3.5 4 6-.5 1.5-2 2-4 1.5"
+                        />
+                        <path
+                          d="M10 19c.5 1 1 1.5 2 1.5s1.5-.5 2-1.5"
+                        /></svg></span
+                    >Pedicure</a
+                  >
+                </li>
+                <li>
+                  <a href="Rzecy/lashes_premium_oksi_ola.html"
+                    ><span class="ni"
+                      ><svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                      >
+                        <ellipse cx="12" cy="13" rx="7" ry="4" />
+                        <path d="M5 13C5 9 8 6 12 6s7 3 7 7" />
+                        <path d="M9 6.5C9 4 10 2 12 2s3 2 3 4.5" /></svg></span
+                    >Rz&#x119;sy</a
+                  >
+                </li>
+                <li>
+                  <a href="make%20up%20i%20brwy/makeup.html"
+                    ><span class="ni"
+                      ><svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M20 7c0 1.66-3.58 3-8 3S4 8.66 4 7s3.58-3 8-3 8 1.34 8 3z"
+                        />
+                        <path d="M4 7v5c0 1.66 3.58 3 8 3s8-1.34 8-3V7" />
+                        <path
+                          d="M4 12v5c0 1.66 3.58 3 8 3s8-1.34 8-3v-5"
+                        /></svg></span
+                    >Maki&#x17C;a&#x17C; &amp; Brwi</a
+                  >
+                </li>
+                <li>
+                  <a href="strzyzenie/strzyzenie.html"
+                    ><span class="ni"
+                      ><svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="6" cy="6" r="3" />
+                        <circle cx="6" cy="18" r="3" />
+                        <line x1="20" y1="4" x2="8.12" y2="15.88" />
+                        <line x1="14.47" y1="14.48" x2="20" y2="20" />
+                        <line x1="8.12" y1="8.12" x2="12" y2="12" /></svg></span
+                    >Fryzjer</a
+                  >
+                </li>
+                <li>
+                  <a href="botoks/botoks.html"
+                    ><span class="ni"
+                      ><svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M12 2C8 2 5 5.5 5 9c0 5 7 13 7 13s7-8 7-13c0-3.5-3-7-7-7z"
+                        />
+                        <path d="M12 9a2 2 0 100-4 2 2 0 000 4z" /></svg></span
+                    >Regeneracja W&#x142;os&#xF3;w</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="#advantages" data-i18n="nav.a">Zalety</a></li>
+            <li><a href="#portfolio" data-i18n="nav.p">Portfolio</a></li>
+            <li><a href="#prices" data-i18n="nav.pr">Cennik</a></li>
+            <li><a href="#reviews" data-i18n="nav.r">Opinie</a></li>
+            <li><a href="#contact" data-i18n="nav.c">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="hdr-r">
+          <!-- Language switcher -->
+          <div class="ls">
+            <button class="ls-btn act" data-lang="pl" onclick="setLang('pl')">
+              PL
+            </button>
+            <span class="ls-sep">&nbsp;|&nbsp;</span>
+            <button class="ls-btn" data-lang="ua" onclick="setLang('ua')">
+              UA
+            </button>
+          </div>
+          <!-- Hamburger (mobile) -->
+          <button class="hbg" id="hbg" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile nav (appears below header) -->
+    <div id="mnav" role="navigation" aria-label="Mobile navigation">
+      <ul class="nav-ul">
+        <li><a href="#services" data-i18n="nav.s">Usługi</a></li>
+        <li>
+          <a
+            href="manicure/manicure.html"
+            style="padding-left: 44px; opacity: 0.85"
+            >Manicure</a
+          >
+        </li>
+        <li>
+          <a
+            href="pedicure/pedicure_premium_oksi_ola.html"
+            style="padding-left: 44px; opacity: 0.85"
+            >Pedicure</a
+          >
+        </li>
+        <li>
+          <a
+            href="Rzecy/lashes_premium_oksi_ola.html"
+            style="padding-left: 44px; opacity: 0.85"
+            >Rz&#x119;sy</a
+          >
+        </li>
+        <li>
+          <a
+            href="make%20up%20i%20brwy/makeup.html"
+            style="padding-left: 44px; opacity: 0.85"
+            >Maki&#x17C;a&#x17C; &amp; Brwi</a
+          >
+        </li>
+        <li>
+          <a
+            href="strzyzenie/strzyzenie.html"
+            style="padding-left: 44px; opacity: 0.85"
+            >Fryzjer</a
+          >
+        </li>
+        <li>
+          <a href="botoks/botoks.html" style="padding-left: 44px; opacity: 0.85"
+            >Regeneracja W&#x142;os&#xF3;w</a
+          >
+        </li>
+        <li><a href="#advantages" data-i18n="nav.a">Zalety</a></li>
+        <li><a href="#portfolio" data-i18n="nav.p">Portfolio</a></li>
+        <li><a href="#prices" data-i18n="nav.pr">Cennik</a></li>
+        <li><a href="#reviews" data-i18n="nav.r">Opinie</a></li>
+        <li><a href="#contact" data-i18n="nav.c">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+    <section id="hero">
+      <div class="hero-ov"></div>
+      <div class="hero-cnt">
+        <p class="hero-tag" data-i18n="h.tag">
+          Ekskluzywny Salon Urody · Nowogard
+        </p>
+        <h1 class="hero-h1">
+          <span data-i18n="h.l1">Twoje Piękno,</span>
+          <em data-i18n="h.l2">Nasza Pasja</em>
+        </h1>
+        <p class="hero-sub" data-i18n="h.sub">
+          Profesjonalne usługi kosmetyczne i fryzjerskie w eleganckiej
+          atmosferze w sercu Nowogardu
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-g" data-i18n="h.cta">Umów wizytę</a>
+          <a href="#services" class="btn btn-o" data-i18n="h.exp"
+            >Nasze usługi</a
+          >
+        </div>
+      </div>
+      <div class="hero-scroll"><span></span></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════════ -->
+    <section id="services" class="sec">
+      <div class="wrap">
+        <div class="sh fi">
+          <span class="sh-tag" data-i18n="sv.tag">Co oferujemy</span>
+          <div class="sh-line"></div>
+          <h2 class="sh-title" data-i18n="sv.ttl">Nasze Usługi</h2>
+          <p class="sh-desc" data-i18n="sv.dsc">
+            Kompleksowa pielęgnacja w jednym miejscu — zapraszamy do świata
+            luksusu
+          </p>
+        </div>
+        <div class="srv-grid">
+          <a href="manicure/manicure.html" class="srv-card fi">
+            <div class="srv-thumb">
+              <img src="images/manicure.jpg" alt="Manicure" loading="lazy" />
+            </div>
+            <h3 data-i18n="sv1.t">Manicure</h3>
+            <p data-i18n="sv1.d">
+              Manicure klasyczny, hybrydowy i &#x17C;elowy. Zdobienia, French,
+              przed&#x142;u&#x17C;anie &#x2014; ka&#x17C;dy detal dopracowany z
+              precyzj&#x105; i pasj&#x105;.
+            </p>
+            <span class="srv-more" data-i18n="srv.more"
+              >Zobacz wi&#x119;cej &#x2192;</span
+            >
+          </a>
+
+          <a href="pedicure/pedicure_premium_oksi_ola.html" class="srv-card fi">
+            <div class="srv-thumb">
+              <img src="images/pedicure.jpg" alt="Pedicure" loading="lazy" />
+            </div>
+            <h3 data-i18n="sv2.t">Pedicure</h3>
+            <p data-i18n="sv2.d">
+              Pedicure klasyczny, hybrydowy i SPA. Piel&#x119;gnacja st&#xF3;p
+              na najwy&#x17C;szym poziomie &#x2014; relaks i pi&#x119;kne efekty
+              w jednym zabiegu.
+            </p>
+            <span class="srv-more" data-i18n="srv.more"
+              >Zobacz wi&#x119;cej &#x2192;</span
+            >
+          </a>
+
+          <a href="Rzecy/lashes_premium_oksi_ola.html" class="srv-card fi">
+            <div class="srv-thumb">
+              <img
+                src="images/rzesy.jpg"
+                alt="Przedłużanie rzęs"
+                loading="lazy"
+              />
+            </div>
+            <h3 data-i18n="sv3.t">Przed&#x142;u&#x17C;anie Rz&#x119;s</h3>
+            <p data-i18n="sv3.d">
+              Metoda 1:1, 2D&#x2013;3D i mega obj&#x119;to&#x15B;&#x107;.
+              Naturalne lub dramatyczne &#x2014; dobierzemy efekt idealny dla
+              Twoich oczu.
+            </p>
+            <span class="srv-more" data-i18n="srv.more"
+              >Zobacz wi&#x119;cej &#x2192;</span
+            >
+          </a>
+
+          <a href="strzyzenie/strzyzenie.html" class="srv-card fi">
+            <div class="srv-thumb">
+              <img
+                src="images/strzyzenie.jpg"
+                alt="Usługi fryzjerskie"
+                loading="lazy"
+              />
+            </div>
+            <h3 data-i18n="sv4.t">Us&#x142;ugi Fryzjerskie</h3>
+            <p data-i18n="sv4.d">
+              Strzy&#x17C;enie damskie i m&#x119;skie. Farbowanie
+              w&#x142;os&#xF3;w. Piel&#x119;gnacja w&#x142;os&#xF3;w,
+              keratyna i regeneracja na zimno.
+            </p>
+            <span class="srv-more" data-i18n="srv.more"
+              >Zobacz wi&#x119;cej &#x2192;</span
+            >
+          </a>
+
+          <a href="make%20up%20i%20brwy/makeup.html" class="srv-card fi">
+            <div class="srv-thumb">
+              <img src="images/brwi.jpg" alt="Makijaż i brwi" loading="lazy" />
+            </div>
+            <h3 data-i18n="sv5.t">Maki&#x17C;a&#x17C; &amp; Brwi</h3>
+            <p data-i18n="sv5.d">
+              Maki&#x17C;a&#x17C; dzienny, wieczorowy i &#x15B;lubny.
+              Stylizacja, laminacja i henna brwi &#x2014; podkre&#x15B;l swoje
+              pi&#x119;kno profesjonalnym dotykiem.
+            </p>
+            <span class="srv-more" data-i18n="srv.more"
+              >Zobacz wi&#x119;cej &#x2192;</span
+            >
+          </a>
+
+          <a href="botoks/botoks.html" class="srv-card fi">
+            <div class="srv-thumb">
+              <img
+                src="botoks/devushka-briunetka-portret-dinnye-volosy-ulybka_1.jpg"
+                alt="Regeneracja włosów"
+                loading="lazy"
+              />
+            </div>
+            <h3 data-i18n="sv6.t">Regeneracja W&#x142;os&#xF3;w</h3>
+            <p data-i18n="sv6.d">
+              Regeneracja w&#x142;os&#xF3;w na zimno. Wyg&#x142;adzenie,
+              blask i odbudowa &#x2014; w&#x142;osy od&#x17C;ywione i
+              jedwabiste na d&#x142;ugo.
+            </p>
+            <span class="srv-more" data-i18n="srv.more"
+              >Zobacz wi&#x119;cej &#x2192;</span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     ADVANTAGES
+═══════════════════════════════════════════ -->
+    <section id="advantages" class="sec sec-alt">
+      <div class="wrap">
+        <div class="sh fi">
+          <span class="sh-tag" data-i18n="av.tag">Dlaczego my</span>
+          <div class="sh-line"></div>
+          <h2 class="sh-title" data-i18n="av.ttl">Nasze Zalety</h2>
+          <p class="sh-desc" data-i18n="av.dsc">
+            Każda wizyta to wyjątkowe doświadczenie — piękno, komfort i
+            profesjonalizm
+          </p>
+        </div>
+        <div class="adv-grid">
+          <div class="adv-item fi">
+            <div class="adv-ico">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <h3 data-i18n="av1.t">Doświadczenie &amp; Profesjonalizm</h3>
+            <p data-i18n="av1.d">
+              Wieloletnie doświadczenie i ciągłe doskonalenie umiejętności na
+              certyfikowanych szkoleniach w Polsce i za granicą.
+            </p>
+          </div>
+          <div class="adv-item fi">
+            <div class="adv-ico">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M6 3h12l4 6-10 13L2 9z" />
+                <path d="M2 9h20" />
+              </svg>
+            </div>
+            <h3 data-i18n="av2.t">Luksusowa Atmosfera</h3>
+            <p data-i18n="av2.d">
+              Eleganckie wnętrze, relaksująca muzyka i indywidualna uwaga — u
+              nas poczujesz się wyjątkowo od pierwszej chwili.
+            </p>
+          </div>
+          <div class="adv-item fi">
+            <div class="adv-ico">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"
+                />
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+              </svg>
+            </div>
+            <h3 data-i18n="av3.t">Najwyższa Jakość</h3>
+            <p data-i18n="av3.d">
+              Używamy wyłącznie renomowanych kosmetyków i narzędzi.
+              Bezpieczeństwo i trwałość efektów to nasz priorytet.
+            </p>
+          </div>
+          <div class="adv-item fi">
+            <div class="adv-ico">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </div>
+            <h3 data-i18n="av4.t">Indywidualne Podejście</h3>
+            <p data-i18n="av4.d">
+              Słuchamy każdej klientki i doradzamy najlepsze rozwiązania. Efekty
+              zawsze dopasowane do Twoich potrzeb i stylu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     STERILITY & SAFETY
+═══════════════════════════════════════════ -->
+    <section id="sterility" class="sec sec-alt">
+      <div class="wrap">
+        <div class="sh fi">
+          <span class="sh-tag" data-i18n="st.tag">Twoje bezpieczeństwo</span>
+          <div class="sh-line"></div>
+          <h2 class="sh-title" data-i18n="st.ttl">
+            Sterylność i Bezpieczeństwo
+          </h2>
+          <p class="sh-desc" data-i18n="st.dsc">
+            Pracujemy według standardów medycznych — bo Twoje zdrowie jest
+            ważniejsze niż cokolwiek innego
+          </p>
+        </div>
+        <div class="ster-grid fi">
+          <!-- 1. ENBIO TOP — full-width video -->
+          <div class="ster-vid-full">
+            <video
+              src="ENBIO.TOP.HD-1080p-4.8Mbps-59675342.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              aria-label="ENBIO TOP — sterylizacja klasy B"
+            ></video>
+            <span class="ster-badge-img">ENBIO TOP · Sterylizacja Klasy B</span>
+          </div>
+
+          <!-- 2. Three trust text blocks -->
+          <div class="ster-text-col">
+            <div class="ster-points">
+              <div class="ster-point fi">
+                <div class="ster-ico">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <line x1="12" y1="8" x2="12" y2="16" />
+                    <line x1="8" y1="12" x2="16" y2="12" />
+                  </svg>
+                </div>
+                <div class="ster-point-body">
+                  <h3 data-i18n="st1.t">
+                    Autoklawa klasy B — standard medyczny
+                  </h3>
+                  <p data-i18n="st1.d">
+                    Każde narzędzie wielorazowe przechodzi pełny cykl
+                    sterylizacji w autoklawie ENBIO PRO klasy B. To najwyższy
+                    dostępny standard — ten sam, który obowiązuje w chirurgii i
+                    stomatologii.
+                  </p>
+                </div>
+              </div>
+              <div class="ster-point fi">
+                <div class="ster-ico">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="ster-point-body">
+                  <h3 data-i18n="st2.t">Jednorazowe narzędzia i materiały</h3>
+                  <p data-i18n="st2.d">
+                    Pilniki, patyczki, wkładki i rękawiczki — każda klientka
+                    otrzymuje nowe, nigdy wcześniej nieużywane materiały. Po
+                    zabiegu są utylizowane.
+                  </p>
+                </div>
+              </div>
+              <div class="ster-point fi">
+                <div class="ster-ico">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <polyline points="9 12 11 14 15 10" />
+                  </svg>
+                </div>
+                <div class="ster-point-body">
+                  <h3 data-i18n="st3.t">
+                    Certyfikowane preparaty dezynfekujące
+                  </h3>
+                  <p data-i18n="st3.d">
+                    Powierzchnie robocze i skóra klientki dezynfekowane są
+                    certyfikowanymi preparatami biobójczymi. Pracujemy zgodnie z
+                    wymogami Sanepidu.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. EnbioMed Bottom — full-width video -->
+          <div class="ster-vid-full">
+            <video
+              src="enbio.med.BOTTOM.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              aria-label="ENBIO MED — dezynfekcja certyfikowana"
+            ></video>
+            <span class="ster-vid-badge">ENBIO MED · Dezynfekcja</span>
+          </div>
+
+          <!-- 4. Trust bar -->
+          <div class="ster-trust-bar ster-text-col">
+            <span class="ster-trust-bar-icon"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                style="width: 28px; height: 28px; color: #9a6070"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg
+            ></span>
+            <p data-i18n="st.bar">
+              Twoje bezpieczeństwo to dla nas
+              <strong>obowiązek, nie opcja.</strong> Inwestujemy w sprzęt i
+              procedury, których większość salonów nie stosuje.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     PORTFOLIO
+═══════════════════════════════════════════ -->
+    <section id="portfolio" class="sec">
+      <div class="wrap">
+        <div class="sh fi">
+          <span class="sh-tag" data-i18n="po.tag">Nasze prace</span>
+          <div class="sh-line"></div>
+          <h2 class="sh-title" data-i18n="po.ttl">Portfolio</h2>
+          <p class="sh-desc" data-i18n="po.dsc">
+            Każda praca to wyraz pasji i precyzji — przekonaj się sama
+          </p>
+        </div>
+        <div class="port-grid">
+          <a class="port-card fi" href="manicure/manicure.html">
+            <img
+              class="port-img"
+              src="images/manicure.jpg"
+              alt="Manicure"
+              loading="lazy"
+            />
+            <div class="port-lbl">
+              <h3 data-i18n="po1.t">Manicure</h3>
+              <p data-i18n="po1.s">Klasyczny &amp; hybrydowy</p>
+            </div>
+          </a>
+
+          <a
+            class="port-card fi"
+            href="pedicure/pedicure_premium_oksi_ola.html"
+          >
+            <img
+              class="port-img"
+              src="images/pedicure.jpg"
+              alt="Pedicure"
+              loading="lazy"
+            />
+            <div class="port-lbl">
+              <h3 data-i18n="po2.t">Pedicure</h3>
+              <p data-i18n="po2.s">Klasyczny &amp; SPA</p>
+            </div>
+          </a>
+
+          <a class="port-card fi" href="Rzecy/lashes_premium_oksi_ola.html">
+            <img
+              class="port-img"
+              src="images/rzesy.jpg"
+              alt="Przedłużanie rzęs"
+              loading="lazy"
+            />
+            <div class="port-lbl">
+              <h3 data-i18n="po3.t">Przedłużanie rzęs</h3>
+              <p data-i18n="po3.s">Metoda 1:1, 2D–3D</p>
+            </div>
+          </a>
+
+          <a class="port-card fi" href="make%20up%20i%20brwy/makeup.html">
+            <img
+              class="port-img"
+              src="images/brwi.jpg"
+              alt="Stylizacja brwi"
+              loading="lazy"
+            />
+            <div class="port-lbl">
+              <h3 data-i18n="po4.t">Stylizacja brwi</h3>
+              <p data-i18n="po4.s">Laminacja &amp; henna</p>
+            </div>
+          </a>
+
+          <a class="port-card fi" href="strzyzenie/strzyzenie.html">
+            <img
+              class="port-img"
+              src="images/kolor.jpg"
+              alt="Koloryzacja"
+              loading="lazy"
+            />
+            <div class="port-lbl">
+              <h3 data-i18n="po5.t">Koloryzacja</h3>
+              <p data-i18n="po5.s">Balayage &amp; farbowanie</p>
+            </div>
+          </a>
+
+          <a class="port-card fi" href="strzyzenie/strzyzenie.html">
+            <img
+              class="port-img"
+              src="images/strzyzenie.jpg"
+              alt="Strzyżenie"
+              loading="lazy"
+            />
+            <div class="port-lbl">
+              <h3 data-i18n="po6.t">Strzyżenie</h3>
+              <p data-i18n="po6.s">Damskie &amp; męskie</p>
+            </div>
+          </a>
+
+          <a class="port-card fi" href="manicure/manicure.html">
+            <img
+              class="port-img"
+              src="manicure/23-11-22-10_00_30-gallery.jpg"
+              alt="Manicure"
+              loading="lazy"
+            />
+            <div class="port-lbl">
+              <h3 data-i18n="po7.t">Manicure</h3>
+              <p data-i18n="po7.s">Efekty &amp; zdobienia</p>
+            </div>
+          </a>
+
+          <a class="port-card fi" href="manicure/manicure.html">
+            <img
+              class="port-img"
+              src="manicure/23-11-22-10_00_37-gallery.jpeg"
+              alt="Manicure"
+              loading="lazy"
+            />
+            <div class="port-lbl">
+              <h3 data-i18n="po8.t">Manicure</h3>
+              <p data-i18n="po8.s">Nail art &amp; French</p>
+            </div>
+          </a>
+
+          <a class="port-card fi" href="manicure/manicure.html">
+            <img
+              class="port-img"
+              src="manicure/23-07-28-10_45_07-gallery.jpg"
+              alt="Manicure"
+              loading="lazy"
+            />
+            <div class="port-lbl">
+              <h3 data-i18n="po9.t">Manicure</h3>
+              <p data-i18n="po9.s">Hybrydowy &amp; żelowy</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     PRICES
+═══════════════════════════════════════════ -->
+    <section id="prices" class="sec sec-alt">
+      <div class="wrap">
+        <div class="sh fi">
+          <span class="sh-tag" data-i18n="pr.tag">Transparentne ceny</span>
+          <div class="sh-line"></div>
+          <h2 class="sh-title" data-i18n="pr.ttl">Cennik</h2>
+          <p class="sh-desc" data-i18n="pr.dsc">
+            Ceny podane w złotych polskich (PLN). Wycena indywidualna po
+            konsultacji.
+          </p>
+        </div>
+        <div class="fi">
+          <div class="pr-tabs">
+            <button
+              class="pr-tab act"
+              onclick="showTab('mn', this)"
+              data-i18n="tb.mn"
+            >
+              Manicure
+            </button>
+            <button
+              class="pr-tab"
+              onclick="showTab('pd', this)"
+              data-i18n="tb.pd"
+            >
+              Pedicure
+            </button>
+            <button
+              class="pr-tab"
+              onclick="showTab('rz', this)"
+              data-i18n="tb.rz"
+            >
+              Rzęsy
+            </button>
+            <button
+              class="pr-tab"
+              onclick="showTab('fr', this)"
+              data-i18n="tb.fr"
+            >
+              Fryzjer
+            </button>
+          </div>
+
+          <!-- Manicure prices -->
+          <div id="pr-mn" class="pr-pnl act">
+            <div class="pr-list">
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="mn1">Manicure klasyczny</span
+                ><span class="pr-val">od 80 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="mn2">Manicure hybrydowy</span
+                ><span class="pr-val">od 120 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="mn3"
+                  >Manicure z żelem (builder)</span
+                ><span class="pr-val">od 140 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="mn4">Uzupełnienie hybrydy</span
+                ><span class="pr-val">od 180 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="mn5"
+                  >Przedłużanie paznokci żelem</span
+                ><span class="pr-val">od 190 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="mn6">Zdobienia / nail art</span
+                ><span class="pr-val">od 20 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="mn7"
+                  >Zdjęcie żelu / hybrydy</span
+                ><span class="pr-val">40 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="mn8">Naprawa paznokcia</span
+                ><span class="pr-val">20 zł</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pedicure prices -->
+          <div id="pr-pd" class="pr-pnl">
+            <div class="pr-list">
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="pd1">Pedicure klasyczny</span
+                ><span class="pr-val">od 130zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="pd2">Pedicure hybrydowy</span
+                ><span class="pr-val">od 150 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="pd3">Pedicure SPA</span
+                ><span class="pr-val">od 180 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="pd4"
+                  >Uzupełnienie hybrydy (pedicure)</span
+                ><span class="pr-val">od 120 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="pd5"
+                  >Zdjęcie żelu / hybrydy</span
+                ><span class="pr-val">od 40 zł</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Eyelash prices -->
+          <div id="pr-rz" class="pr-pnl">
+            <div class="pr-list">
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="rz1"
+                  >Przedłużanie rzęs 1:1 (naturalny)</span
+                ><span class="pr-val">od 130 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="rz2">Objętość 2D–3D</span
+                ><span class="pr-val">od 180 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="rz3">Mega objętość</span
+                ><span class="pr-val">od 210 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="rz4"
+                  >Uzupełnienie (do 3 tygodni)</span
+                ><span class="pr-val">od 130 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="rz5"
+                  >Uzupełnienie (po 3 tygodniach)</span
+                ><span class="pr-val">od 150 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="rz6">Zdjęcie rzęs</span
+                ><span class="pr-val">od 50 zł</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hair services prices -->
+          <div id="pr-fr" class="pr-pnl">
+            <div class="pr-list">
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="fr1">Strzyżenie damskie</span
+                ><span class="pr-val">od 90 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="fr2"
+                  >Strzyżenie damskie z modelowaniem</span
+                ><span class="pr-val">od 130 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="fr3">Strzyżenie męskie</span
+                ><span class="pr-val">od 50 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="fr4"
+                  >Farbowanie (krótkie / długie)</span
+                ><span class="pr-val">od 170 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="fr5">Balayage / Ombre</span
+                ><span class="pr-val">od 280 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="fr6">Regeneracja intensywna</span
+                ><span class="pr-val">od 220 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="fr7">Keratyna</span
+                ><span class="pr-val">od 320 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="fr8">Regeneracja na zimno</span
+                ><span class="pr-val">od 170 zł</span>
+              </div>
+              <div class="pr-row">
+                <span class="pr-name" data-i18n="fr9"
+                  >Modelowanie / blowout</span
+                ><span class="pr-val">od 90 zł</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="pr-note" data-i18n="pr.nt">
+            * Ceny orientacyjne. Ostateczna cena ustalana jest podczas
+            konsultacji.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     REVIEWS
+═══════════════════════════════════════════ -->
+    <section id="reviews" class="sec">
+      <div class="wrap">
+        <div class="sh fi">
+          <span class="sh-tag" data-i18n="rv.tag">Co mówią klientki</span>
+          <div class="sh-line"></div>
+          <h2 class="sh-title" data-i18n="rv.ttl">Opinie</h2>
+          <p class="sh-desc" data-i18n="rv.dsc">
+            Wasze zaufanie to nasza największa nagroda
+          </p>
+        </div>
+        <div class="rev-grid">
+          <div class="rev-card fi">
+            <div class="rev-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span
+              ><span>★</span>
+            </div>
+            <p class="rev-txt" data-i18n="rv1">
+              Moje brwi nigdy nie wyglądały tak pięknie! Precyzja i dbałość o
+              każdy detal to coś, co wyróżnia ten salon. Polecam z całego serca!
+            </p>
+            <div class="rev-auth">
+              <div class="rev-av">AW</div>
+              <div>
+                <div class="rev-name">Aleksandra Wiśniewska</div>
+                <div class="rev-date">Sierpień 2025</div>
+              </div>
+            </div>
+          </div>
+          <div class="rev-card fi">
+            <div class="rev-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span
+              ><span>★</span>
+            </div>
+            <p class="rev-txt" data-i18n="rv2">
+              Manicure hybrydowy utrzymał się ponad trzy tygodnie bez żadnych
+              odprysków. Ekipa super miła, atmosfera wyjątkowa. Na pewno wrócę!
+            </p>
+            <div class="rev-auth">
+              <div class="rev-av">NK</div>
+              <div>
+                <div class="rev-name">Natalia Kowalczyk</div>
+                <div class="rev-date">Lipiec 2025</div>
+              </div>
+            </div>
+          </div>
+          <div class="rev-card fi">
+            <div class="rev-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span
+              ><span>★</span>
+            </div>
+            <p class="rev-txt" data-i18n="rv3">
+              Rzęsy 2D wyglądają naturalnie i pięknie. Wykonanie na bardzo
+              wysokim poziomie, a efekt utrzymał się długo. Bardzo polecam!
+            </p>
+            <div class="rev-auth">
+              <div class="rev-av">OK</div>
+              <div>
+                <div class="rev-name">Olena Kovalenko</div>
+                <div class="rev-date">Czerwiec 2025</div>
+              </div>
+            </div>
+          </div>
+          <div class="rev-card fi">
+            <div class="rev-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span
+              ><span>★</span>
+            </div>
+            <p class="rev-txt" data-i18n="rv4">
+              Zdecydowałam się na manicure żelowy i jestem zachwycona
+              rezultatem. Precyzja wykonania i dobór koloru idealny — panie
+              wiedzą, czego chcesz!
+            </p>
+            <div class="rev-auth">
+              <div class="rev-av">KN</div>
+              <div>
+                <div class="rev-name">Katarzyna Nowak</div>
+                <div class="rev-date">Wrzesień 2025</div>
+              </div>
+            </div>
+          </div>
+          <div class="rev-card fi">
+            <div class="rev-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span
+              ><span>★</span>
+            </div>
+            <p class="rev-txt" data-i18n="rv5">
+              Pedicure SPA to czysta przyjemność! Stopy wyglądają jak nowe, a
+              cały zabieg był jak relaks w spa. Cudowne miejsce, ciepłe
+              przyjęcie!
+            </p>
+            <div class="rev-auth">
+              <div class="rev-av">IM</div>
+              <div>
+                <div class="rev-name">Iryna Melnyk</div>
+                <div class="rev-date">Październik 2025</div>
+              </div>
+            </div>
+          </div>
+          <div class="rev-card fi">
+            <div class="rev-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span
+              ><span>★</span>
+            </div>
+            <p class="rev-txt" data-i18n="rv6">
+              Rzęsy na metodę 1:1 — delikatne, naturalne i idealnie dopasowane
+              do kształtu moich oczu. Efekt wow! Wróciłam już na drugie
+              uzupełnienie.
+            </p>
+            <div class="rev-auth">
+              <div class="rev-av">MZ</div>
+              <div>
+                <div class="rev-name">Magdalena Zielińska</div>
+                <div class="rev-date">Sierpień 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Leave a review ── -->
+        <div class="rev-form-wrap fi">
+          <div class="sh">
+            <span class="sh-tag" data-i18n="rf.tag">Zostaw swoją opinię</span>
+            <div class="sh-line"></div>
+            <p class="sh-desc" data-i18n="rf.desc">
+              Byłaś u nas? Podziel się swoją opinią i pomóż innym klientkom
+              wybrać Oksi&amp;Ola Salon.
+            </p>
+          </div>
+          <form class="rev-form" id="rev-form" onsubmit="rfSubmit(event)">
+            <div class="rf-row">
+              <div class="rf-field">
+                <label class="rf-label" data-i18n="rf.lname">Imię</label>
+                <input
+                  type="text"
+                  class="rf-input"
+                  id="rf-name"
+                  data-i18n-ph="rf.phname"
+                  placeholder="Twoje imię"
+                  required
+                />
+              </div>
+              <div class="rf-field">
+                <label class="rf-label" data-i18n="rf.lrating">Ocena</label>
+                <div class="rf-stars" id="rf-stars">
+                  <span data-v="1">★</span><span data-v="2">★</span
+                  ><span data-v="3">★</span><span data-v="4">★</span
+                  ><span data-v="5">★</span>
+                </div>
+                <input type="hidden" id="rf-rating" value="0" />
+              </div>
+            </div>
+            <div class="rf-field rf-field-mb">
+              <label class="rf-label" data-i18n="rf.ltext">Twoja opinia</label>
+              <textarea
+                class="rf-input rf-textarea"
+                id="rf-text"
+                data-i18n-ph="rf.phtext"
+                placeholder="Napisz swoją opinię..."
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-g rf-submit"
+              data-i18n="rf.submit"
+            >
+              Wyślij opinię
+            </button>
+            <p class="rf-thanks" id="rf-thanks"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════ -->
+    <section id="contact" class="sec sec-alt">
+      <div class="wrap">
+        <div class="sh fi">
+          <span class="sh-tag" data-i18n="cn.tag">Jesteśmy tu dla Ciebie</span>
+          <div class="sh-line"></div>
+          <h2 class="sh-title" data-i18n="cn.ttl">Kontakt</h2>
+        </div>
+        <div class="con-grid fi">
+          <!-- Left: Contact info -->
+          <div>
+            <!-- ADDRESS -->
+            <div class="con-item">
+              <div class="con-ico">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 12 6 12s6-6.75 6-12c0-3.314-2.686-6-6-6z"
+                  />
+                  <circle cx="12" cy="8" r="2" />
+                </svg>
+              </div>
+              <div>
+                <div class="con-lbl" data-i18n="cn.al">Adres</div>
+                <div class="con-val">
+                  <a
+                    href="https://maps.app.goo.gl/5Hv5Bdgt4e6tWiY88?g_st=ic"
+                    target="_blank"
+                    rel="noopener"
+                    >ul. 5 Marca 10, 72-200 Nowogard</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- PHONE -->
+            <div class="con-item">
+              <div class="con-ico">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 12.4 12.4 0 003.88.76 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 12.4 12.4 0 00.76 3.88 1 1 0 01-.25 1.02L6.62 10.79z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="con-lbl" data-i18n="cn.pl">Telefon</div>
+                <div class="con-val">
+                  <a href="tel:+48732723765">+48 732 723 765</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOOKING CHANNELS -->
+            <div class="con-item">
+              <div class="con-ico">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path
+                    d="M22 8H2M8 4v2M16 4v2M2 12h20M8 16h.01M12 16h.01M16 16h.01"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="con-lbl" data-i18n="cn.el">E-mail</div>
+                <div class="con-val">
+                  <a href="mailto:Oksi.Ola.Salon@gmail.com"
+                    >Oksi.Ola.Salon@gmail.com</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- HOURS -->
+            <div class="con-item">
+              <div class="con-ico">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3.5 3.5" />
+                </svg>
+              </div>
+              <div>
+                <div class="con-lbl" data-i18n="cn.hl">Godziny otwarcia</div>
+                <div class="con-val">
+                  <div class="hrs-list">
+                    <div class="hrs-row">
+                      <span data-i18n="cn.h1">Pon.–Pt: 10:00 – 19:00</span>
+                    </div>
+                    <div class="hrs-row">
+                      <span data-i18n="cn.h2">Sobota: 8:00 – 15:00</span>
+                    </div>
+                    <div class="hrs-row hrs-row-rest">
+                      <span data-i18n="cn.h3"
+                        >Niedziela — dzień odpoczynku ✨</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Contact actions -->
+          <div>
+            <p class="con-act-intro" data-i18n="cn.act.intro">
+              Zadzwoń lub napisz — odpowiadamy szybko!
+            </p>
+            <div class="con-act-wrap">
+              <!-- 1. Phone -->
+              <a
+                href="tel:+48732723765"
+                class="con-act-btn con-act-phone"
+                data-i18n="cn.act.phone"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.27 2.68.76 3.88a1 1 0 01-.21 1.11l-2.43 1.8z"
+                  />
+                </svg>
+                Zadzwoń teraz
+              </a>
+
+              <!-- 2. WhatsApp -->
+              <a
+                href="https://wa.me/48732723765"
+                class="con-act-btn con-act-wa"
+                target="_blank"
+                rel="noopener"
+                data-i18n="cn.act.wa"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+                WhatsApp
+              </a>
+
+              <!-- 3. Messenger -->
+              <a
+                href="https://www.facebook.com/share/1GyActXqjf/?mibextid=wwXIfr"
+                class="con-act-btn con-act-msg"
+                target="_blank"
+                rel="noopener"
+                data-i18n="cn.act.msg"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.438 5.504 3.686 7.205V21l2.186-1.202A10.7 10.7 0 0012 20.486c5.523 0 10-4.144 10-9.243S17.523 2 12 2zm1.006 12.44l-2.547-2.718-4.97 2.718 5.467-5.805 2.611 2.718 4.906-2.718-5.467 5.805z"
+                  />
+                </svg>
+                Messenger
+              </a>
+
+              <!-- 4. Facebook -->
+              <a
+                href="https://www.facebook.com/share/1GyActXqjf/?mibextid=wwXIfr"
+                class="con-act-btn con-act-fb"
+                target="_blank"
+                rel="noopener"
+                data-i18n="cn.act.fb"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+                Facebook
+              </a>
+
+              <!-- 5. Google Maps -->
+              <a
+                href="https://maps.app.goo.gl/5Hv5Bdgt4e6tWiY88?g_st=ic"
+                class="con-act-btn con-act-maps"
+                target="_blank"
+                rel="noopener"
+                data-i18n="cn.act.maps"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"
+                  />
+                </svg>
+                Jak dojechać
+              </a>
+
+              <!-- 6. Instagram -->
+              <a
+                href="https://www.instagram.com/shapranolga_?igsh=ZHVidWR1NWE0MzZ4"
+                class="con-act-btn con-act-ig"
+                target="_blank"
+                rel="noopener"
+                data-i18n="cn.act.ig"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+                Instagram
+              </a>
+            </div>
+
+            <!-- QR CODE — Google Maps -->
+            <div class="qr-block" style="margin-top: 20px">
+              <a
+                href="https://maps.app.goo.gl/5Hv5Bdgt4e6tWiY88?g_st=ic"
+                target="_blank"
+                rel="noopener"
+                class="qr-anchor"
+              >
+                <div class="qr-frame">
+                  <img
+                    src="images/qr-google.Oksi%26Ola.png"
+                    alt="QR Code Google Maps"
+                    class="qr-obj"
+                  />
+                </div>
+                <span class="qr-caption" data-i18n="cn.qr"
+                  >Zeskanuj kod i otwórz mapę</span
+                >
+              </a>
+            </div>
+
+            <p class="con-act-note" data-i18n="cn.act.note">
+              Odpowiadamy zazwyczaj w ciągu kilku godzin ✓
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+    <footer id="ftr">
+      <div class="wrap">
+        <div class="ftr-logo">Oksi<span class="amp">&amp;</span>Ola</div>
+        <div class="ftr-sub">Salon Nowogard</div>
+        <div class="ftr-line"></div>
+        <p class="ftr-txt">
+          <span data-i18n="ft.r"
+            >© 2025 Oksi&amp;Ola Salon Nowogard. Wszelkie prawa
+            zastrzeżone.</span
+          ><br />
+          <a
+            href="https://maps.app.goo.gl/5Hv5Bdgt4e6tWiY88?g_st=ic"
+            target="_blank"
+            rel="noopener"
+            style="color: inherit; text-decoration: none; opacity: 0.75"
+            >ul. 5 Marca 10, 72-200 Nowogard</a
+          >
+          &nbsp;·&nbsp;
+          <a
+            href="tel:+48732723765"
+            style="color: inherit; text-decoration: none; opacity: 0.75"
+            >+48 732 723 765</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+    <script>
+      /* ──────────────────────────────────────────────
+   TRANSLATIONS  (PL = default, UA = Ukrainian)
+────────────────────────────────────────────── */
+      var T = {
+        pl: {
+          /* nav */
+          "nav.s": "Usługi",
+          "nav.a": "Zalety",
+          "nav.p": "Portfolio",
+          "nav.pr": "Cennik",
+          "nav.r": "Opinie",
+          "nav.c": "Kontakt",
+
+          /* hero */
+          "h.tag": "Ekskluzywny Salon Urody · Nowogard",
+          "h.l1": "Twoje Piękno,",
+          "h.l2": "Nasza Pasja",
+          "h.sub":
+            "Profesjonalne usługi kosmetyczne i fryzjerskie w eleganckiej atmosferze w sercu Nowogardu",
+          "h.cta": "Umów wizytę",
+          "h.exp": "Nasze usługi",
+
+          /* services section */
+          "sv.tag": "Co oferujemy",
+          "sv.ttl": "Nasze Usługi",
+          "sv.dsc":
+            "Kompleksowa pielęgnacja w jednym miejscu — zapraszamy do świata luksusu",
+          "sv1.t": "Manicure",
+          "sv1.d":
+            "Manicure klasyczny, hybrydowy i żelowy. Zdobienia, French, przedłużanie — każdy detal dopracowany z precyzją i pasją.",
+          "sv2.t": "Pedicure",
+          "sv2.d":
+            "Pedicure klasyczny, hybrydowy i SPA. Pielęgnacja stóp na najwyższym poziomie — relaks i piękne efekty w jednym zabiegu.",
+          "sv3.t": "Przedłużanie Rzęs",
+          "sv3.d":
+            "Metoda 1:1, 2D–3D i mega objętość. Naturalne lub dramatyczne — dobierzemy efekt idealny dla Twoich oczu.",
+          "sv4.t": "Usługi Fryzjerskie",
+          "sv4.d":
+            "Strzyżenie damskie i męskie. Farbowanie włosów. Pielęgnacja włosów, keratyna i regeneracja na zimno.",
+          "sv5.t": "Makijaż &amp; Brwi",
+          "sv5.d":
+            "Makijaż dzienny, wieczorowy i ślubny. Stylizacja, laminacja i henna brwi — podkreśl swoje piękno profesjonalnym dotykiem.",
+          "sv6.t": "Regeneracja Włosów",
+          "sv6.d":
+            "Regeneracja włosów na zimno. Wygładzenie, blask i odbudowa — włosy odżywione i jedwabiste na długo.",
+          "srv.more": "Zobacz więcej →",
+
+          /* advantages */
+          "av.tag": "Dlaczego my",
+          "av.ttl": "Nasze Zalety",
+          "av.dsc":
+            "Każda wizyta to wyjątkowe doświadczenie — piękno, komfort i profesjonalizm",
+          "av1.t": "Doświadczenie &amp; Profesjonalizm",
+          "av1.d":
+            "Wieloletnie doświadczenie i ciągłe doskonalenie umiejętności na certyfikowanych szkoleniach w Polsce i za granicą.",
+          "av2.t": "Luksusowa Atmosfera",
+          "av2.d":
+            "Eleganckie wnętrze, relaksująca muzyka i indywidualna uwaga — u nas poczujesz się wyjątkowo od pierwszej chwili.",
+          "av3.t": "Najwyższa Jakość",
+          "av3.d":
+            "Używamy wyłącznie renomowanych kosmetyków i narzędzi. Bezpieczeństwo i trwałość efektów to nasz priorytet.",
+          "av4.t": "Indywidualne Podejście",
+          "av4.d":
+            "Słuchamy każdej klientki i doradzamy najlepsze rozwiązania. Efekty zawsze dopasowane do Twoich potrzeb i stylu.",
+
+          /* sterility */
+          "st.tag": "Twoje bezpieczeństwo",
+          "st.ttl": "Sterylność i Bezpieczeństwo",
+          "st.dsc":
+            "Pracujemy według standardów medycznych — bo Twoje zdrowie jest ważniejsze niż cokolwiek innego",
+          "st.img": "Zdjęcie autoklawy ENBIO PRO zostanie dodane wkrótce",
+          "st1.t": "Autoklawa klasy B — standard medyczny",
+          "st1.d":
+            "Każde narzędzie wielorazowe przechodzi pełny cykl sterylizacji w autoklawie ENBIO PRO klasy B. To najwyższy dostępny standard — ten sam, który obowiązuje w chirurgii i stomatologii.",
+          "st2.t": "Jednorazowe narzędzia i materiały",
+          "st2.d":
+            "Pilniki, patyczki, wkładki i rękawiczki — każda klientka otrzymuje nowe, nigdy wcześniej nieużywane materiały. Po zabiegu są utylizowane.",
+          "st3.t": "Certyfikowane preparaty dezynfekujące",
+          "st3.d":
+            "Powierzchnie robocze i skóra klientki dezynfekowane są certyfikowanymi preparatami biobójczymi. Pracujemy zgodnie z wymogami Sanepidu.",
+          "st.bar":
+            "Twoje bezpieczeństwo to dla nas <strong>obowiązek, nie opcja.</strong> Inwestujemy w sprzęt i procedury, których większość salonów nie stosuje.",
+
+          /* portfolio */
+          "po.tag": "Nasze prace",
+          "po.ttl": "Portfolio",
+          "po.dsc":
+            "Każda praca to wyraz pasji i precyzji — przekonaj się sama",
+          "po1.t": "Manicure",
+          "po1.s": "Klasyczny &amp; hybrydowy",
+          "po2.t": "Pedicure",
+          "po2.s": "Klasyczny &amp; SPA",
+          "po3.t": "Przedłużanie rzęs",
+          "po3.s": "Metoda 1:1, 2D–3D",
+          "po4.t": "Stylizacja brwi",
+          "po4.s": "Laminacja &amp; henna",
+          "po5.t": "Koloryzacja",
+          "po5.s": "Balayage &amp; farbowanie",
+          "po6.t": "Strzyżenie",
+          "po6.s": "Damskie &amp; męskie",
+          "po7.t": "Manicure",
+          "po7.s": "Efekty &amp; zdobienia",
+          "po8.t": "Manicure",
+          "po8.s": "Nail art &amp; French",
+          "po9.t": "Manicure",
+          "po9.s": "Hybrydowy &amp; żelowy",
+          "ph.add": "Dodaj zdjęcie",
+
+          /* prices */
+          "pr.tag": "Transparentne ceny",
+          "pr.ttl": "Cennik",
+          "pr.dsc":
+            "Ceny podane w złotych polskich (PLN). Wycena indywidualna po konsultacji.",
+          "pr.nt":
+            "* Ceny orientacyjne. Ostateczna cena ustalana jest podczas konsultacji.",
+          "tb.mn": "Manicure",
+          "tb.pd": "Pedicure",
+          "tb.rz": "Rzęsy",
+          "tb.fr": "Fryzjer",
+          mn1: "Manicure klasyczny",
+          mn2: "Manicure hybrydowy",
+          mn3: "Manicure z żelem (builder)",
+          mn4: "Uzupełnienie hybrydy",
+          mn5: "Przedłużanie paznokci żelem",
+          mn6: "Zdobienia / nail art",
+          mn7: "Zdjęcie żelu / hybrydy",
+          mn8: "Naprawa paznokcia",
+          pd1: "Pedicure klasyczny",
+          pd2: "Pedicure hybrydowy",
+          pd3: "Pedicure SPA",
+          pd4: "Uzupełnienie hybrydy (pedicure)",
+          pd5: "Zdjęcie żelu / hybrydy",
+          rz1: "Przedłużanie rzęs 1:1 (naturalny)",
+          rz2: "Objętość 2D–3D",
+          rz3: "Mega objętość",
+          rz4: "Uzupełnienie (do 3 tygodni)",
+          rz5: "Uzupełnienie (po 3 tygodniach)",
+          rz6: "Zdjęcie rzęs",
+          fr1: "Strzyżenie damskie",
+          fr2: "Strzyżenie damskie z modelowaniem",
+          fr3: "Strzyżenie męskie",
+          fr4: "Farbowanie (krótkie / długie)",
+          fr5: "Balayage / Ombre",
+          fr6: "Regeneracja intensywna",
+          fr7: "Keratyna",
+          fr8: "Regeneracja na zimno",
+          fr9: "Modelowanie / blowout",
+
+          /* reviews */
+          "rv.tag": "Co mówią klientki",
+          "rv.ttl": "Opinie",
+          "rv.dsc": "Wasze zaufanie to nasza największa nagroda",
+          "rv.empty": "Opinie naszych klientek pojawią się tutaj wkrótce ❤️",
+          rv1: "Moje brwi nigdy nie wyglądały tak pięknie! Precyzja i dbałość o każdy detal to coś, co wyróżnia ten salon. Polecam z całego serca!",
+          rv2: "Manicure hybrydowy utrzymał się ponad trzy tygodnie bez żadnych odprysków. Ekipa super miła, atmosfera wyjątkowa. Na pewno wrócę!",
+          rv3: "Rzęsy 2D wyglądają naturalnie i pięknie. Wykonanie na bardzo wysokim poziomie, a efekt utrzymał się długo. Bardzo polecam!",
+          rv4: "Zdecydowałam się na manicure żelowy i jestem zachwycona rezultatem. Precyzja wykonania i dobór koloru idealny — panie wiedzą, czego chcesz!",
+          rv5: "Pedicure SPA to czysta przyjemność! Stopy wyglądają jak nowe, a cały zabieg był jak relaks w spa. Cudowne miejsce, ciepłe przyjęcie!",
+          rv6: "Rzęsy na metodę 1:1 — delikatne, naturalne i idealnie dopasowane do kształtu moich oczu. Efekt wow! Wróciłam już na drugie uzupełnienie.",
+
+          /* contact */
+          "cn.tag": "Jesteśmy tu dla Ciebie",
+          "cn.ttl": "Kontakt",
+          "cn.dsc": "Zadzwoń, napisz lub wpadnij — zawsze chętnie Cię powitamy",
+          "cn.al": "Adres",
+          "cn.pl": "Telefon",
+          "cn.el": "E-mail",
+          "cn.hl": "Godziny otwarcia",
+          "cn.h1": "Pon.–Pt: 10:00 – 19:00",
+          "cn.h2": "Sobota: 8:00 – 15:00",
+          "cn.h3": "Niedziela — dzień odpoczynku ✨",
+          "cn.act.intro": "Zadzwoń lub napisz — odpowiadamy szybko!",
+          "cn.act.phone": "Zadzwoń teraz",
+          "cn.act.wa": "WhatsApp",
+          "cn.act.msg": "Messenger",
+          "cn.act.fb": "Facebook",
+          "cn.act.maps": "Jak dojechać",
+          "cn.act.ig": "Instagram",
+          "cn.act.note": "Odpowiadamy zazwyczaj w ciągu kilku godzin ✓",
+          "cn.qr": "Zeskanuj kod i otwórz mapę",
+
+          /* form */
+          "fm.nl": "Imię i nazwisko",
+          "fm.np": "Twoje imię",
+          "fm.phl": "Telefon",
+          "fm.php": "+48 000 000 000",
+          "fm.el": "E-mail",
+          "fm.ep": "twoj@email.pl",
+          "fm.sl": "Wybierz usługę",
+          "fm.sd": "-- Wybierz usługę --",
+          "fm.s1": "Manicure",
+          "fm.s2": "Pedicure",
+          "fm.s3": "Przedłużanie rzęs",
+          "fm.s4": "Usługi fryzjerskie",
+          "fm.s5": "Inne",
+          "fm.ml": "Wiadomość",
+          "fm.mp": "Napisz do nas...",
+          "fm.ok": "Dziękujemy! Odezwiemy się wkrótce. ✓",
+          "fm.sb": "Wyślij wiadomość",
+
+          /* footer */
+          "ft.r":
+            "© 2025 Oksi&amp;Ola Salon Nowogard. Wszelkie prawa zastrzeżone.",
+
+          /* review form */
+          "rf.tag": "Zostaw swoją opinię",
+          "rf.desc":
+            "Byłaś u nas? Podziel się swoją opinią i pomóż innym klientkom wybrać Oksi&amp;Ola Salon.",
+          "rf.lname": "Imię",
+          "rf.phname": "Twoje imię",
+          "rf.lrating": "Ocena",
+          "rf.ltext": "Twoja opinia",
+          "rf.phtext": "Napisz swoją opinię...",
+          "rf.submit": "Wyślij opinię",
+        },
+
+        ua: {
+          /* nav */
+          "nav.s": "Послуги",
+          "nav.a": "Переваги",
+          "nav.p": "Портфоліо",
+          "nav.pr": "Ціни",
+          "nav.r": "Відгуки",
+          "nav.c": "Контакт",
+
+          /* hero */
+          "h.tag": "Ексклюзивний Салон Краси · Новогард",
+          "h.l1": "Ваша Краса,",
+          "h.l2": "Наша Пристрасть",
+          "h.sub":
+            "Професійні косметичні та перукарські послуги в елегантній атмосфері в серці Новогарда",
+          "h.cta": "Записатися",
+          "h.exp": "Наші послуги",
+
+          /* services */
+          "sv.tag": "Що ми пропонуємо",
+          "sv.ttl": "Наші Послуги",
+          "sv.dsc":
+            "Комплексний догляд в одному місці — запрошуємо у світ розкоші",
+          "sv1.t": "Манікюр",
+          "sv1.d":
+            "Класичний, гібридний та гелевий манікюр. Декорування, French, нарощування — кожна деталь з точністю та пристрастю.",
+          "sv2.t": "Педикюр",
+          "sv2.d":
+            "Класичний, гібридний та СПА-педикюр. Догляд за ногами найвищого рівня — релакс і гарний результат в одній процедурі.",
+          "sv3.t": "Нарощування Вій",
+          "sv3.d":
+            "Метод 1:1, 2D–3D та мега-об'єм. Натуральний або драматичний — підберемо ідеальний ефект для ваших очей.",
+          "sv4.t": "Перукарські Послуги",
+          "sv4.d":
+            "Жіночі та чоловічі стрижки. Фарбування волосся. Догляд за волоссям, кератин та холодне відновлення.",
+          "sv5.t": "Макіяж &amp; Брови",
+          "sv5.d":
+            "Денний, вечірній та весільний макіяж. Стилізація, ламінування та хна для брів — підкресліть свою красу.",
+          "sv6.t": "Відновлення Волосся",
+          "sv6.d":
+            "Холодне відновлення волосся. Розгладження, блиск та регенерація — волосся живлене і шовковисте надовго.",
+          "srv.more": "Детальніше →",
+
+          /* advantages */
+          "av.tag": "Чому ми",
+          "av.ttl": "Наші Переваги",
+          "av.dsc":
+            "Кожен візит — унікальний досвід: краса, комфорт і професіоналізм",
+          "av1.t": "Досвід &amp; Професіоналізм",
+          "av1.d":
+            "Багаторічний досвід і постійне вдосконалення на сертифікованих тренінгах у Польщі та за кордоном.",
+          "av2.t": "Розкішна Атмосфера",
+          "av2.d":
+            "Елегантний інтер'єр, розслаблювальна музика та індивідуальна увага — з нами ви відчуєте себе особливою з першої хвилини.",
+          "av3.t": "Найвища Якість",
+          "av3.d":
+            "Використовуємо лише продукти відомих брендів. Безпека та довговічність результату — наш пріоритет.",
+          "av4.t": "Індивідуальний Підхід",
+          "av4.d":
+            "Слухаємо кожну клієнтку та радимо найкращі рішення. Результат завжди підібраний під ваші потреби та стиль.",
+
+          /* sterility */
+          "st.tag": "Ваша безпека",
+          "st.ttl": "Стерильність і Безпека",
+          "st.dsc":
+            "Ми працюємо за медичними стандартами — бо ваше здоров'я важливіше за все інше",
+          "st.img": "Фото автоклаву ENBIO PRO буде додано незабаром",
+          "st1.t": "Автоклав класу B — медичний стандарт",
+          "st1.d":
+            "Кожен багаторазовий інструмент проходить повний цикл стерилізації в автоклаві ENBIO PRO класу B. Це найвищий доступний стандарт — такий самий, що діє в хірургії та стоматології.",
+          "st2.t": "Одноразові інструменти та матеріали",
+          "st2.d":
+            "Пилочки, палички, вкладиші та рукавички — кожна клієнтка отримує нові, ніколи раніше не використані матеріали. Після процедури вони утилізуються.",
+          "st3.t": "Сертифіковані дезінфікуючі засоби",
+          "st3.d":
+            "Робочі поверхні та шкіра клієнтки дезінфікуються сертифікованими біоцидними препаратами. Ми працюємо відповідно до вимог санепідемслужби.",
+          "st.bar":
+            "Ваша безпека — це для нас <strong>обов'язок, а не опція.</strong> Ми інвестуємо в обладнання та процедури, яких більшість салонів не застосовує.",
+
+          /* portfolio */
+          "po.tag": "Наші роботи",
+          "po.ttl": "Портфоліо",
+          "po.dsc":
+            "Кожна робота — вираз пристрасті та точності: переконайтесь самі",
+          "po1.t": "Манікюр",
+          "po1.s": "Класичний &amp; гібридний",
+          "po2.t": "Педикюр",
+          "po2.s": "Класичний &amp; СПА",
+          "po3.t": "Нарощування вій",
+          "po3.s": "Метод 1:1, 2D–3D",
+          "po4.t": "Стилізація брів",
+          "po4.s": "Ламінування &amp; хна",
+          "po5.t": "Фарбування",
+          "po5.s": "Балаяж &amp; фарбування",
+          "po6.t": "Стрижка",
+          "po6.s": "Жіноча &amp; чоловіча",
+          "po7.t": "Манікюр",
+          "po7.s": "Ефекти &amp; декорування",
+          "po8.t": "Манікюр",
+          "po8.s": "Nail art &amp; French",
+          "po9.t": "Манікюр",
+          "po9.s": "Гібридний &amp; гелевий",
+          "ph.add": "Додати фото",
+
+          /* prices */
+          "pr.tag": "Прозорі ціни",
+          "pr.ttl": "Прайс-лист",
+          "pr.dsc":
+            "Ціни вказані в польських злотих (PLN). Індивідуальна вартість після консультації.",
+          "pr.nt":
+            "* Орієнтовні ціни. Остаточна вартість визначається під час консультації.",
+          "tb.mn": "Манікюр",
+          "tb.pd": "Педикюр",
+          "tb.rz": "Вії",
+          "tb.fr": "Перукар",
+          mn1: "Класичний манікюр",
+          mn2: "Гібридний манікюр",
+          mn3: "Манікюр з гелем (builder)",
+          mn4: "Наповнення гібриду",
+          mn5: "Нарощування нігтів гелем",
+          mn6: "Декорування / nail art",
+          mn7: "Зняття гелю / гібриду",
+          mn8: "Ремонт нігтя",
+          pd1: "Класичний педикюр",
+          pd2: "Гібридний педикюр",
+          pd3: "Педикюр СПА",
+          pd4: "Наповнення гібриду (педикюр)",
+          pd5: "Зняття гелю / гібриду",
+          rz1: "Нарощування вій 1:1 (натуральні)",
+          rz2: "Об'єм 2D–3D",
+          rz3: "Мега-об'єм",
+          rz4: "Корекція (до 3 тижнів)",
+          rz5: "Корекція (після 3 тижнів)",
+          rz6: "Зняття вій",
+          fr1: "Жіноча стрижка",
+          fr2: "Жіноча стрижка з укладанням",
+          fr3: "Чоловіча стрижка",
+          fr4: "Фарбування (коротке / довге)",
+          fr5: "Балаяж / Омбре",
+          fr6: "Інтенсивне відновлення",
+          fr7: "Кератин",
+          fr8: "Холодне відновлення",
+          fr9: "Укладання / blowout",
+
+          /* reviews */
+          "rv.tag": "Що кажуть клієнтки",
+          "rv.ttl": "Відгуки",
+          "rv.dsc": "Ваша довіра — наша найбільша нагорода",
+          "rv.empty": "Відгуки наших клієнток з'являться тут незабаром ❤️",
+          rv1: "Мої брови ніколи не виглядали так гарно! Точність і турбота про кожну деталь — це те, що вирізняє цей салон. Щиро рекомендую!",
+          rv2: "Гібридний манікюр протримався понад три тижні без жодних відколів. Команда чудова, атмосфера неповторна. Обов'язково повернусь!",
+          rv3: "Вії 2D виглядають природно і красиво. Виконання на дуже високому рівні, а ефект зберігся довго. Дуже рекомендую!",
+          rv4: "Вирішила зробити гелевий манікюр — захоплена результатом. Точність виконання і підбір кольору ідеальні — майстрині знають, чого ви хочете!",
+          rv5: "СПА-педикюр — суцільне задоволення! Ноги виглядають як нові, а вся процедура — як відпочинок у спа. Чудове місце, тепле прийняття!",
+          rv6: "Вії методом 1:1 — ніжні, природні й ідеально підібрані до форми моїх очей. Ефект wow! Вже повернулась на друге наповнення.",
+
+          /* contact */
+          "cn.tag": "Ми тут для вас",
+          "cn.ttl": "Контакт",
+          "cn.dsc":
+            "Зателефонуйте, напишіть або завітайте — завжди раді вас вітати",
+          "cn.al": "Адреса",
+          "cn.pl": "Телефон",
+          "cn.el": "Пошта",
+          "cn.hl": "Години роботи",
+          "cn.h1": "Пн.–Пт: 10:00 – 19:00",
+          "cn.h2": "Субота: 8:00 – 15:00",
+          "cn.h3": "Неділя — день відпочинку ✨",
+          "cn.act.intro": "Зателефонуйте або напишіть — відповідаємо швидко!",
+          "cn.act.phone": "Зателефонуйте",
+          "cn.act.wa": "WhatsApp",
+          "cn.act.msg": "Messenger",
+          "cn.act.fb": "Facebook",
+          "cn.act.maps": "Як доїхати",
+          "cn.act.ig": "Instagram",
+          "cn.act.note": "Зазвичай відповідаємо протягом кількох годин ✓",
+          "cn.qr": "Відскануй QR і відкрий карту",
+
+          /* form */
+          "fm.nl": "Ім'я та прізвище",
+          "fm.np": "Ваше ім'я",
+          "fm.phl": "Телефон",
+          "fm.php": "+48 000 000 000",
+          "fm.el": "Електронна пошта",
+          "fm.ep": "vasha@poshta.pl",
+          "fm.sl": "Оберіть послугу",
+          "fm.sd": "-- Оберіть послугу --",
+          "fm.s1": "Манікюр",
+          "fm.s2": "Педикюр",
+          "fm.s3": "Нарощування вій",
+          "fm.s4": "Перукарські послуги",
+          "fm.s5": "Інше",
+          "fm.ml": "Повідомлення",
+          "fm.mp": "Напишіть нам...",
+          "fm.ok": "Дякуємо! Ми зв'яжемося з вами незабаром. ✓",
+          "fm.sb": "Надіслати повідомлення",
+
+          /* footer */
+          "ft.r": "© 2025 Окся&amp;Оля Салон Новогард. Усі права захищені.",
+
+          /* review form */
+          "rf.tag": "Залиште свій відгук",
+          "rf.desc":
+            "Ви були у нас? Поділіться своєю думкою та допоможіть іншим клієнткам обрати Oksi&amp;Ola Salon.",
+          "rf.lname": "Ім'я",
+          "rf.phname": "Ваше ім'я",
+          "rf.lrating": "Оцінка",
+          "rf.ltext": "Ваш відгук",
+          "rf.phtext": "Напишіть свій відгук...",
+          "rf.submit": "Надіслати відгук",
+        },
+      };
+
+      /* ──────────────────────────────────────────────
+   setLang — applies all translations
+────────────────────────────────────────────── */
+      function setLang(lang) {
+        /* text nodes */
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var k = el.getAttribute("data-i18n");
+          if (T[lang][k] !== undefined) el.innerHTML = T[lang][k];
+        });
+        /* placeholders */
+        document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
+          var k = el.getAttribute("data-i18n-ph");
+          if (T[lang][k] !== undefined) el.placeholder = T[lang][k];
+        });
+        /* title */
+        document.title =
+          lang === "ua"
+            ? "Окся&Оля Салон | Новогард"
+            : "Oksi&Ola Salon | Nowogard";
+        /* html lang attr */
+        document.documentElement.lang = lang === "ua" ? "uk" : "pl";
+        /* active button */
+        document.querySelectorAll(".ls-btn").forEach(function (b) {
+          b.classList.toggle("act", b.dataset.lang === lang);
+        });
+        /* persist */
+        try {
+          localStorage.setItem("oksiola-lang", lang);
+        } catch (e) {}
+      }
+
+      /* ──────────────────────────────────────────────
+   Price tabs
+────────────────────────────────────────────── */
+      function showTab(id, btn) {
+        document.querySelectorAll(".pr-pnl").forEach(function (p) {
+          p.classList.remove("act");
+        });
+        document.querySelectorAll(".pr-tab").forEach(function (b) {
+          b.classList.remove("act");
+        });
+        document.getElementById("pr-" + id).classList.add("act");
+        btn.classList.add("act");
+      }
+
+      /* ──────────────────────────────────────────────
+   Header — glassmorphism + smart auto-hide
+────────────────────────────────────────────── */
+      var hdr = document.getElementById("hdr");
+      var lastScrollY = 0;
+      var ticking = false;
+      window.addEventListener(
+        "scroll",
+        function () {
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              var y = window.scrollY;
+              hdr.classList.toggle("sc", y > 60);
+              if (y > 120) {
+                if (y > lastScrollY + 8) {
+                  hdr.classList.add("hdr-hidden");
+                  /* close mobile nav when header hides */
+                  if (
+                    document.getElementById("mnav").classList.contains("show")
+                  ) {
+                    document.getElementById("hbg").classList.remove("op");
+                    document
+                      .getElementById("hbg")
+                      .setAttribute("aria-expanded", "false");
+                    document.getElementById("mnav").classList.remove("show");
+                  }
+                } else if (y < lastScrollY - 8) {
+                  hdr.classList.remove("hdr-hidden");
+                }
+              } else {
+                hdr.classList.remove("hdr-hidden");
+              }
+              lastScrollY = y;
+              ticking = false;
+            });
+            ticking = true;
+          }
+        },
+        { passive: true },
+      );
+
+      /* ──────────────────────────────────────────────
+   Hamburger menu (mobile)
+────────────────────────────────────────────── */
+      var hbg = document.getElementById("hbg");
+      var mnav = document.getElementById("mnav");
+      hbg.addEventListener("click", function () {
+        var open = hbg.classList.toggle("op");
+        hbg.setAttribute("aria-expanded", open);
+        if (open) {
+          mnav.classList.add("show");
+        } else {
+          mnav.classList.remove("show");
+        }
+      });
+      /* close on any nav link click */
+      document.querySelectorAll("#mnav a, #dnav a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          hbg.classList.remove("op");
+          hbg.setAttribute("aria-expanded", "false");
+          mnav.classList.remove("show");
+        });
+      });
+
+      /* ──────────────────────────────────────────────
+   Smooth scroll with header offset
+────────────────────────────────────────────── */
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          var tgt = document.querySelector(this.getAttribute("href"));
+          if (!tgt) return;
+          e.preventDefault();
+          window.scrollTo({
+            top:
+              tgt.getBoundingClientRect().top +
+              window.pageYOffset -
+              hdr.offsetHeight,
+            behavior: "smooth",
+          });
+        });
+      });
+
+      /* ──────────────────────────────────────────────
+   Fade-in on scroll (IntersectionObserver)
+────────────────────────────────────────────── */
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) {
+              en.target.classList.add("on");
+              io.unobserve(en.target);
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+      document.querySelectorAll(".fi").forEach(function (el) {
+        io.observe(el);
+      });
+
+      /* ──────────────────────────────────────────────
+   INIT — restore saved language
+────────────────────────────────────────────── */
+      (function () {
+        var saved = "pl";
+        try {
+          saved = localStorage.getItem("oksiola-lang") || "pl";
+        } catch (e) {}
+        if (saved === "ua") setLang("ua");
+      })();
+
+      /* ──────────────────────────────────────────────
+   Review form — star rating + submit
+────────────────────────────────────────────── */
+      (function () {
+        var stars = document.querySelectorAll("#rf-stars span");
+        var ratingInput = document.getElementById("rf-rating");
+        stars.forEach(function (s) {
+          s.addEventListener("mouseover", function () {
+            var v = +this.dataset.v;
+            stars.forEach(function (x) {
+              x.classList.toggle("lit", +x.dataset.v <= v);
+            });
+          });
+          s.addEventListener("mouseout", function () {
+            var cur = +(ratingInput.value || 0);
+            stars.forEach(function (x) {
+              x.classList.toggle("lit", +x.dataset.v <= cur);
+            });
+          });
+          s.addEventListener("click", function () {
+            ratingInput.value = this.dataset.v;
+            var v = +this.dataset.v;
+            stars.forEach(function (x) {
+              x.classList.toggle("lit", +x.dataset.v <= v);
+            });
+          });
+        });
+      })();
+
+      function rfSubmit(e) {
+        e.preventDefault();
+        var lang = "pl";
+        try {
+          lang = localStorage.getItem("oksiola-lang") || "pl";
+        } catch (x) {}
+        var msg =
+          lang === "ua"
+            ? "Дякуємо! Відгук буде опубліковано після перевірки."
+            : "Dziękujemy! Opinia zostanie opublikowana po sprawdzeniu.";
+        document.getElementById("rf-thanks").textContent = msg;
+        document.getElementById("rev-form").reset();
+        document.querySelectorAll("#rf-stars span").forEach(function (x) {
+          x.classList.remove("lit");
+        });
+        document.getElementById("rf-rating").value = 0;
+      }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+     FLOATING ACTION BUTTONS
+═══════════════════════════════════════════ -->
+    <nav class="fab-stack" aria-label="Szybki kontakt">
+      <!-- Phone -->
+      <a
+        href="tel:+48732723765"
+        class="fab-btn"
+        data-tooltip="Zadzwoń"
+        aria-label="Zadzwoń"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.27 2.68.76 3.88a1 1 0 01-.21 1.11l-2.43 1.8z"
+          />
+        </svg>
+      </a>
+
+      <!-- WhatsApp -->
+      <a
+        href="https://wa.me/48732723765"
+        class="fab-btn"
+        target="_blank"
+        rel="noopener"
+        data-tooltip="WhatsApp"
+        aria-label="WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+          />
+        </svg>
+      </a>
+
+      <!-- Messenger -->
+      <a
+        href="https://www.facebook.com/share/1GyActXqjf/?mibextid=wwXIfr"
+        class="fab-btn"
+        target="_blank"
+        rel="noopener"
+        data-tooltip="Messenger"
+        aria-label="Messenger"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.438 5.504 3.686 7.205V21l2.186-1.202A10.7 10.7 0 0012 20.486c5.523 0 10-4.144 10-9.243S17.523 2 12 2zm1.006 12.44l-2.547-2.718-4.97 2.718 5.467-5.805 2.611 2.718 4.906-2.718-5.467 5.805z"
+          />
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a
+        href="https://www.instagram.com/shapranolga_?igsh=ZHVidWR1NWE0MzZ4"
+        class="fab-btn"
+        target="_blank"
+        rel="noopener"
+        data-tooltip="Instagram"
+        aria-label="Instagram"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+          />
+        </svg>
+      </a>
+    </nav>
+  </body>
+</html>
