@@ -1,0 +1,1561 @@
+﻿<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Makija&#x17C; i stylizacja brwi Nowogard &#x2014; Oksi&amp;Ola Salon. Makija&#x17C; dzienny, wieczorowy, &#x15B;lubny. Laminacja, henna i modelowanie brwi."
+    />
+    <title>Makija&#x17C; &amp; Brwi | Oksi&amp;Ola Salon Nowogard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../images/fav.icon.png" type="image/png" />
+    <style>
+      :root {
+        --cream: #faf8f3;
+        --beige: #f2e9da;
+        --beige2: #eadbc8;
+        --gold: #c9a84c;
+        --gold2: #9e7b28;
+        --pink: #e7b8c6;
+        --dark: #24170d;
+        --text: #453621;
+        --muted: #81715b;
+        --white: #fff;
+        --shadow: 0 18px 60px rgba(35, 22, 10, 0.13);
+        --soft: 0 8px 30px rgba(35, 22, 10, 0.08);
+        --serif: "Playfair Display", Georgia, serif;
+        --sans: "Lato", Arial, sans-serif;
+        --wrap: 1160px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--sans);
+        background: var(--cream);
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .wrap {
+        max-width: var(--wrap);
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px 34px;
+        border-radius: 9px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.82rem;
+        transition: 0.25s;
+      }
+      .btn-g {
+        background: var(--gold);
+        color: #fff;
+        box-shadow: 0 10px 26px rgba(201, 168, 76, 0.32);
+      }
+      .btn-g:hover {
+        background: var(--gold2);
+        transform: translateY(-2px);
+      }
+      .btn-o {
+        border: 1px solid rgba(158, 123, 40, 0.35);
+        color: var(--gold2);
+        background: rgba(255, 255, 255, 0.45);
+      }
+      .btn-o:hover {
+        background: #fff;
+        transform: translateY(-2px);
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 76px;
+        z-index: 20;
+        background: rgba(255, 245, 238, 0.22);
+        backdrop-filter: blur(22px) saturate(180%);
+        -webkit-backdrop-filter: blur(22px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 220, 195, 0.25);
+        transition: background 0.4s, box-shadow 0.4s, transform 0.38s cubic-bezier(0.4,0,0.2,1);
+      }
+      .head {
+        height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .logo { display: flex; align-items: center; flex-shrink: 0; }
+      .logo-img { height: 62px; width: auto; max-width: 250px; object-fit: contain; display: block; }
+      @media(max-width:560px){.logo-img{height:46px;max-width:190px}}
+      @media(max-width:430px){.logo-img{height:42px;max-width:88px}}
+      header.scrolled {
+        background: rgba(250, 248, 243, 0.96);
+        box-shadow: var(--soft);
+      }
+      nav {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+      }
+      nav a {
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.86);
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        transition: 0.2s;
+      }
+      header.scrolled nav a {
+        color: var(--text);
+        text-shadow: none;
+      }
+      nav a:hover {
+        color: var(--gold);
+      }
+
+      .hero {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(250, 245, 240, 0.97) 0%,
+            rgba(250, 245, 240, 0.88) 50%,
+            rgba(250, 245, 240, 0.35) 100%
+          ),
+          radial-gradient(
+            circle at 72% 35%,
+            rgba(231, 184, 198, 0.28),
+            transparent 48%
+          ),
+          radial-gradient(
+            circle at 12% 70%,
+            rgba(201, 168, 76, 0.14),
+            transparent 42%
+          ),
+          var(--cream);
+      }
+      .hero-photo {
+       position: absolute;
+    right: 0;
+    bottom: -75px;
+    height: 100%;
+    width: 62%;
+    pointer-events: none;
+    z-index: 1;
+      }
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 50%;
+        display: block;
+        filter: brightness(1.03) contrast(1.05) saturate(1.04) blur(0.2px);
+      }
+      .hero:before {
+        content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(250,248,243,1) 0%,
+    rgba(250,248,243,0.9) 20%,
+    rgba(250,248,243,0.65) 40%,
+    rgba(250,248,243,0.35) 60%,
+    rgba(250,248,243,0.12) 78%,
+    transparent 92%
+);
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        padding-top: 80px;
+      }
+      .hero-copy {
+        max-width: 620px;
+        text-align: center;
+        transform: translateX(20px);
+      }
+      .eyebrow {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.34em;
+        font-weight: 900;
+        color: var(--gold2);
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-family: var(--serif);
+        font-size: clamp(3rem, 7vw, 6rem);
+        line-height: 0.98;
+        color: rgba(218, 167, 184, 0.62);
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+      h1 em {
+        display: block;
+        color: var(--gold2);
+        font-style: italic;
+        font-weight: 600;
+        text-shadow: 0 5px 18px rgba(255, 255, 255, 0.45);
+      }
+      .hero-text {
+        max-width: 510px;
+        margin: 26px auto 38px;
+        color: rgba(69, 54, 33, 0.68);
+        font-size: 1.05rem;
+        font-weight: 400;
+      }
+      .hero-actions {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 10;
+      }
+
+      section {
+        padding: 90px 0;
+      }
+      .alt {
+        background: linear-gradient(180deg, var(--beige), #f8f4ec);
+      }
+      .sec-head {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 54px;
+      }
+      .tag {
+        display: block;
+        color: var(--gold);
+        font-size: 0.74rem;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        font-weight: 900;
+        margin-bottom: 12px;
+      }
+      h2 {
+        font-family: var(--serif);
+        font-size: clamp(2rem, 4vw, 3.1rem);
+        line-height: 1.15;
+        color: var(--dark);
+        margin-bottom: 16px;
+      }
+      .lead {
+        color: var(--muted);
+        font-size: 1.02rem;
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 44px;
+        align-items: center;
+      }
+      .intro-card {
+        background: #fff;
+        border: 1px solid rgba(201, 168, 76, 0.14);
+        border-radius: 24px;
+        padding: 42px;
+        box-shadow: var(--soft);
+      }
+      .intro-card h3 {
+        font-family: var(--serif);
+        font-size: 2rem;
+        margin-bottom: 16px;
+        color: var(--dark);
+      }
+      .intro-card p {
+        color: var(--muted);
+        margin-bottom: 20px;
+      }
+      .checks {
+        display: grid;
+        gap: 13px;
+        margin-top: 25px;
+      }
+      .check {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        color: var(--text);
+        font-weight: 700;
+      }
+      .check span {
+        color: var(--gold);
+        font-weight: 900;
+      }
+      .intro-img {
+        border-radius: 26px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        height: 560px;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+      }
+      .service {
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(201, 168, 76, 0.14);
+        border-radius: 22px;
+        padding: 28px 24px;
+        box-shadow: var(--soft);
+        transition: 0.3s;
+      }
+      .service:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow);
+      }
+      .icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(249, 228, 236, 0.85) 0%, rgba(232, 212, 244, 0.75) 100%);
+        border: 1px solid rgba(210, 168, 190, 0.35);
+        box-shadow: 0 2px 14px rgba(196, 148, 182, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        color: #9a6070;
+        margin-bottom: 18px;
+      }
+      .icon svg {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+      .service h3 {
+        font-family: var(--serif);
+        font-size: 1.28rem;
+        color: var(--dark);
+        margin-bottom: 10px;
+      }
+      .service p {
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+
+      .price-box {
+        background: #fff;
+        border-radius: 26px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(201, 168, 76, 0.16);
+        overflow: hidden;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+        align-items: center;
+        padding: 20px 28px;
+        border-bottom: 1px dashed rgba(201, 168, 76, 0.24);
+      }
+      .row:last-child {
+        border-bottom: 0;
+      }
+      .row b {
+        font-size: 1rem;
+        color: var(--dark);
+      }
+      .row small {
+        display: block;
+        color: var(--muted);
+        font-weight: 400;
+        margin-top: 3px;
+      }
+      .price {
+        font-family: var(--serif);
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--gold2);
+        white-space: nowrap;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .gitem {
+        height: 380px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--soft);
+        cursor: pointer;
+        position: relative;
+        background: #ddd;
+      }
+      .gitem:nth-child(1) {
+        height: 460px;
+      }
+      .gitem img {
+        transition: 0.45s ease;
+      }
+      .gitem:hover img {
+        transform: scale(1.06);
+      }
+      .gitem:after {
+        content: "Zobacz";
+        position: absolute;
+        left: 18px;
+        bottom: 18px;
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(8px);
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 0.75rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: 0.3s;
+      }
+      .gitem:hover:after {
+        opacity: 1;
+      }
+
+      .cta {
+        text-align: center;
+        padding: 80px 40px;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(36, 23, 13, 0.9),
+            rgba(36, 23, 13, 0.75)
+          ),
+          linear-gradient(to right, #1a0d05, #2d1a0a);
+        border-radius: 28px;
+      }
+      .cta h2 {
+        color: #fff;
+      }
+      .cta p {
+        color: rgba(255, 255, 255, 0.78);
+        max-width: 620px;
+        margin: 0 auto 28px;
+      }
+
+      footer {
+        background: var(--dark);
+        color: rgba(255, 255, 255, 0.58);
+        padding: 38px 0;
+        text-align: center;
+      }
+      footer b {
+        font-family: var(--serif);
+        font-size: 1.55rem;
+        color: #fff;
+      }
+      footer b span {
+        color: var(--gold);
+      }
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.88);
+        z-index: 100;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 28px;
+      }
+      .lightbox.open {
+        display: flex;
+      }
+      .lightbox img {
+        width: auto;
+        max-width: 96vw;
+        height: auto;
+        max-height: 90vh;
+        border-radius: 16px;
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+      }
+      .close {
+        position: absolute;
+        top: 18px;
+        right: 22px;
+        color: #fff;
+        font-size: 42px;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      @media (max-width: 900px) {
+        nav {
+          display: none;
+        }
+        .hero-photo {
+          height: 55%;
+          right: -30px;
+        }
+        .hero-copy {
+          transform: none;
+          margin: 0 auto;
+          padding-bottom: 45px;
+        }
+        h1 {
+          font-size: clamp(3rem, 15vw, 5rem);
+        }
+        .intro {
+          grid-template-columns: 1fr;
+        }
+        .services-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gallery {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gitem,
+        .gitem:nth-child(1) {
+          height: 320px;
+        }
+      }
+      @media (max-width: 560px) {
+        header {
+          height: 66px;
+        }
+        .head {
+          height: 66px;
+        }
+        .hero {
+          min-height: 92vh;
+        }
+        .hero-photo {
+          display: none;
+        }
+        .hero-actions .btn {
+          width: 100%;
+        }
+        section {
+          padding: 64px 0;
+        }
+        .services-grid,
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+        .row {
+          grid-template-columns: 1fr;
+          padding: 18px 22px;
+        }
+        .intro-img {
+          height: 420px;
+        }
+      }
+      .nav-dd {
+        position: relative;
+      }
+      .nav-dd-menu {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: -12px;
+        background: rgba(250, 248, 243, 0.97);
+        backdrop-filter: blur(14px);
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(35, 22, 10, 0.15);
+        border: 1px solid rgba(201, 168, 76, 0.18);
+        min-width: 220px;
+        padding: 8px 0;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-6px);
+        transition:
+          opacity 0.25s,
+          transform 0.25s;
+        z-index: 50;
+      }
+      .nav-dd:hover .nav-dd-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+      .nav-dd-menu a {
+        display: block;
+        padding: 11px 18px;
+        font-size: 0.73rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 900;
+        color: var(--text) !important;
+        text-shadow: none !important;
+        white-space: nowrap;
+        transition: 0.2s;
+      }
+      .nav-dd-menu a:hover {
+        color: var(--gold) !important;
+        background: rgba(201, 168, 76, 0.07);
+      }
+
+      [lang-block] {
+        display: none;
+      }
+      [lang-block].active {
+        display: block;
+      }
+      .langs {
+        display: flex;
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        border-radius: 9px;
+        overflow: hidden;
+      }
+      .langs button {
+        padding: 7px 11px;
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        color: rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        transition: 0.2s;
+      }
+      header.scrolled .langs button {
+        color: var(--text);
+      }
+      .langs button.active {
+        background: var(--gold);
+        color: #fff;
+      }
+      .hbg{display:none;flex-direction:column;gap:5px;width:28px;padding:4px 0;cursor:pointer;border:none;background:none;flex-shrink:0}
+      .hbg span{display:block;height:1.5px;transition:.35s;border-radius:2px;background:rgba(255,255,255,.85)}
+      header.scrolled .hbg span{background:var(--dark)}
+      .hbg.op span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+      .hbg.op span:nth-child(2){opacity:0;transform:scaleX(0)}
+      .hbg.op span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+      #mnav{display:none;position:fixed;top:76px;left:0;right:0;z-index:19;background:rgba(250,248,243,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 8px 40px rgba(35,22,10,.13);padding:12px 0 20px}
+      #mnav.show{display:block}
+      #mnav a{display:block;padding:13px 28px;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--text);border-bottom:1px solid rgba(201,168,76,.08);transition:color .2s,background .2s}
+      #mnav a:hover{color:var(--gold);background:rgba(201,168,76,.04)}
+      @media(max-width:900px){.hbg{display:flex}}
+      @media(max-width:560px){#mnav{top:66px}}
+    </style>
+  </head>
+  <body>
+    <header id="hdr">
+      <div class="wrap head">
+        <a class="logo" href="../index.html">
+          <picture>
+            <source media="(max-width: 430px)" srcset="../images/compact logo.png" />
+            <img src="../images/logo new.png" alt="Oksi&amp;Ola Salon" class="logo-img" />
+          </picture>
+        </a>
+        <nav>
+          <a href="../index.html">G&#x142;&#xF3;wna</a>
+          <div class="nav-dd">
+            <a href="../index.html#services">Us&#x142;ugi &#x25BE;</a>
+            <div class="nav-dd-menu">
+              <a href="../manicure/manicure.html">Manicure</a
+              ><a href="../pedicure/pedicure_premium_oksi_ola.html"
+                >Pedicure</a
+              ><a href="../Rzecy/lashes_premium_oksi_ola.html"
+                >Rz&#x119;sy</a
+              ><a href="../make%20up%20i%20brwy/makeup.html"
+                >Maki&#x17C;a&#x17C; &amp; Brwi</a
+              ><a href="../strzyzenie/strzyzenie.html">Fryzjer</a
+              ><a href="../botoks/botoks.html"
+                >Regeneracja W&#x142;os&#xF3;w</a
+              >
+            </div>
+          </div>
+          <a href="#opis">Opis</a>
+          <a href="#cennik">Cennik</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+        <div class="langs">
+          <button class="active" data-lang="pl">PL</button
+          ><button data-lang="ua">UA</button>
+        </div>
+        <button class="hbg" id="hbg" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <div id="mnav">
+      <a href="../index.html">Główna</a>
+      <a href="../manicure/manicure.html">Manicure</a>
+      <a href="../pedicure/pedicure_premium_oksi_ola.html">Pedicure</a>
+      <a href="../Rzecy/lashes_premium_oksi_ola.html">Rzęsy</a>
+      <a href="../make%20up%20i%20brwy/makeup.html">Makijaż &amp; Brwi</a>
+      <a href="../strzyzenie/strzyzenie.html">Fryzjer</a>
+      <a href="../botoks/botoks.html">Regeneracja Włosów</a>
+      <a href="#opis">Opis</a>
+      <a href="#cennik">Cennik</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+
+    <main>
+      <section class="hero">
+        <div class="hero-photo">
+          <img src="1769422585-make-up.jpg" alt="Makija&#x17C; Oksi&amp;Ola" />
+        </div>
+        <div class="wrap hero-inner">
+          <div class="hero-copy">
+            <div lang-block data-block="pl" class="active">
+              <p class="eyebrow">
+                Makija&#x17C; &amp; Brwi &middot; Oksi&amp;Ola &middot; Nowogard
+              </p>
+              <h1>
+                Podkre&#x15B;l swoje pi&#x119;kno,<em>wyraziste spojrzenie</em>
+              </h1>
+              <p class="hero-text">
+                Makija&#x17C; dzienny, wieczorowy i okoliczno&#x15B;ciowy.
+                Stylizacja, laminacja i henna brwi &#x2014; oprawienie oka,
+                kt&#xF3;re podkre&#x15B;la Twoj&#x105; naturaln&#x105;
+                urod&#x119;.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-g" href="tel:+48732723765">Zadzwo&#x144;</a>
+                <a class="btn btn-o" href="#galeria">Zobacz prace</a>
+              </div>
+            </div>
+            <div lang-block data-block="ua">
+              <p class="eyebrow">
+                &#x41C;&#x430;&#x43A;&#x456;&#x44F;&#x436; &amp;
+                &#x411;&#x440;&#x43E;&#x432;&#x438; &middot; Oksi&amp;Ola
+                &middot;
+                &#x41D;&#x43E;&#x432;&#x43E;&#x433;&#x430;&#x440;&#x434;
+              </p>
+              <h1>
+                &#x41F;&#x456;&#x434;&#x43A;&#x440;&#x435;&#x441;&#x43B;&#x456;&#x442;&#x44C;
+                &#x441;&#x432;&#x43E;&#x44E;
+                &#x432;&#x440;&#x430;&#x433;&#x443;,<em
+                  >&#x432;&#x438;&#x440;&#x430;&#x437;&#x43D;&#x438;&#x439;
+                  &#x43F;&#x43E;&#x433;&#x43B;&#x44F;&#x434;</em
+                >
+              </h1>
+              <p class="hero-text">
+                &#x41C;&#x430;&#x43A;&#x456;&#x44F;&#x436;
+                &#x434;&#x435;&#x43D;&#x43D;&#x438;&#x439;,
+                &#x432;&#x435;&#x447;&#x456;&#x440;&#x43D;&#x456;&#x439;
+                &#x442;&#x430;
+                &#x441;&#x432;&#x44F;&#x442;&#x43A;&#x43E;&#x432;&#x438;&#x439;.
+                &#x421;&#x442;&#x438;&#x43B;&#x456;&#x437;&#x430;&#x446;&#x456;&#x44F;,
+                &#x43B;&#x430;&#x43C;&#x456;&#x43D;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F;
+                &#x442;&#x430; &#x445;&#x43D;&#x430; &#x434;&#x43B;&#x44F;
+                &#x431;&#x440;&#x456;&#x432; &#x2014;
+                &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x43D;&#x44F;
+                &#x43E;&#x447;&#x435;&#x439;, &#x44F;&#x43A;&#x435;
+                &#x43F;&#x456;&#x434;&#x43A;&#x440;&#x435;&#x441;&#x43B;&#x44E;&#x454;
+                &#x412;&#x430;&#x448;&#x443;
+                &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x443;
+                &#x432;&#x440;&#x430;&#x433;&#x443;.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-g" href="tel:+48732723765"
+                  >&#x417;&#x430;&#x442;&#x435;&#x43B;&#x435;&#x444;&#x43E;&#x43D;&#x443;&#x432;&#x430;&#x442;&#x438;</a
+                >
+                <a class="btn btn-o" href="#galeria"
+                  >&#x41F;&#x435;&#x440;&#x435;&#x433;&#x43B;&#x44F;&#x43D;&#x443;&#x442;&#x438;
+                  &#x440;&#x43E;&#x431;&#x43E;&#x442;&#x438;</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="opis">
+        <div class="wrap intro">
+          <div class="intro-card">
+            <div lang-block data-block="pl" class="active">
+              <span class="tag">Opis us&#x142;ugi</span>
+              <h3>Makija&#x17C; i stylizacja brwi</h3>
+              <p>
+                Tworzymy makija&#x17C; dopasowany do Twojej karnacji, okazji i
+                osobowo&#x15B;ci. Od naturalnego everyday look po wyrazisty
+                makija&#x17C; wieczorowy &#x2014; zawsze z dbało&#x15B;ci&#x105;
+                o detal i estetyk&#x119;.
+              </p>
+              <p>
+                Stylizacja brwi to dope&#x142;nienie ka&#x17C;dego
+                makija&#x17C;u. Dbamy o kszta&#x142;t, g&#x119;sto&#x15B;&#x107;
+                i wyraz brwi &#x2014; laminacja, henna i precyzyjne modelowanie.
+              </p>
+              <div class="checks">
+                <div class="check">
+                  <span>&#x2713;</span> makija&#x17C; dzienny, wieczorowy i
+                  &#x15B;lubny
+                </div>
+                <div class="check">
+                  <span>&#x2713;</span> stylizacja, laminacja i henna brwi
+                </div>
+                <div class="check">
+                  <span>&#x2713;</span> precyzyjne modelowanie kszta&#x142;tu
+                  brwi
+                </div>
+                <div class="check">
+                  <span>&#x2713;</span> dob&#xF3;r kolorystyki do karnacji i
+                  okazji
+                </div>
+              </div>
+            </div>
+            <div lang-block data-block="ua">
+              <span class="tag"
+                >&#x41E;&#x43F;&#x438;&#x441;
+                &#x43F;&#x43E;&#x441;&#x43B;&#x443;&#x433;&#x438;</span
+              >
+              <h3>
+                &#x41C;&#x430;&#x43A;&#x456;&#x44F;&#x436; &#x442;&#x430;
+                &#x441;&#x442;&#x438;&#x43B;&#x456;&#x437;&#x430;&#x446;&#x456;&#x44F;
+                &#x431;&#x440;&#x456;&#x432;
+              </h3>
+              <p>
+                &#x41C;&#x438;
+                &#x441;&#x442;&#x432;&#x43E;&#x440;&#x44E;&#x454;&#x43C;&#x43E;
+                &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;,
+                &#x43F;&#x456;&#x434;&#x456;&#x431;&#x440;&#x430;&#x43D;&#x438;&#x439;
+                &#x43F;&#x456;&#x434; &#x412;&#x430;&#x448;
+                &#x43A;&#x43E;&#x43B;&#x456;&#x440;
+                &#x448;&#x43A;&#x456;&#x440;&#x438;,
+                &#x43D;&#x430;&#x433;&#x43E;&#x434;&#x443; &#x442;&#x430;
+                &#x43E;&#x441;&#x43E;&#x431;&#x438;&#x441;&#x442;&#x456;&#x441;&#x442;&#x44C;.
+                &#x412;&#x456;&#x434;
+                &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x43E;&#x433;&#x43E;
+                everyday look &#x434;&#x43E;
+                &#x432;&#x438;&#x440;&#x430;&#x437;&#x43D;&#x43E;&#x433;&#x43E;
+                &#x432;&#x435;&#x447;&#x456;&#x440;&#x43D;&#x44C;&#x43E;&#x433;&#x43E;
+                &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;&#x443; &#x2014;
+                &#x437;&#x430;&#x432;&#x436;&#x434;&#x438; &#x437;
+                &#x443;&#x432;&#x430;&#x433;&#x43E;&#x44E; &#x434;&#x43E;
+                &#x434;&#x435;&#x442;&#x430;&#x43B;&#x435;&#x439; &#x442;&#x430;
+                &#x435;&#x441;&#x442;&#x435;&#x442;&#x438;&#x43A;&#x438;.
+              </p>
+              <p>
+                &#x421;&#x442;&#x438;&#x43B;&#x456;&#x437;&#x430;&#x446;&#x456;&#x44F;
+                &#x431;&#x440;&#x456;&#x432; &#x2014; &#x446;&#x435;
+                &#x437;&#x430;&#x432;&#x435;&#x440;&#x448;&#x435;&#x43D;&#x43D;&#x44F;
+                &#x431;&#x443;&#x434;&#x44C;-&#x44F;&#x43A;&#x43E;&#x433;&#x43E;
+                &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;&#x443;.
+                &#x41C;&#x438; &#x434;&#x431;&#x430;&#x454;&#x43C;&#x43E;
+                &#x43F;&#x440;&#x43E; &#x444;&#x43E;&#x440;&#x43C;&#x443;,
+                &#x433;&#x443;&#x441;&#x442;&#x43E;&#x442;&#x443; &#x456;
+                &#x432;&#x438;&#x440;&#x430;&#x437;&#x43D;&#x456;&#x441;&#x442;&#x44C;
+                &#x431;&#x440;&#x456;&#x432; &#x2014;
+                &#x43B;&#x430;&#x43C;&#x456;&#x43D;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F;,
+                &#x445;&#x43D;&#x430; &#x442;&#x430;
+                &#x442;&#x43E;&#x447;&#x43D;&#x435;
+                &#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x44E;&#x432;&#x430;&#x43D;&#x43D;&#x44F;.
+              </p>
+              <div class="checks">
+                <div class="check">
+                  <span>&#x2713;</span>
+                  &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;
+                  &#x434;&#x435;&#x43D;&#x43D;&#x438;&#x439;,
+                  &#x432;&#x435;&#x447;&#x456;&#x440;&#x43D;&#x456;&#x439;
+                  &#x442;&#x430;
+                  &#x432;&#x435;&#x441;&#x456;&#x43B;&#x44C;&#x43D;&#x438;&#x439;
+                </div>
+                <div class="check">
+                  <span>&#x2713;</span>
+                  &#x441;&#x442;&#x438;&#x43B;&#x456;&#x437;&#x430;&#x446;&#x456;&#x44F;,
+                  &#x43B;&#x430;&#x43C;&#x456;&#x43D;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F;
+                  &#x442;&#x430; &#x445;&#x43D;&#x430; &#x434;&#x43B;&#x44F;
+                  &#x431;&#x440;&#x456;&#x432;
+                </div>
+                <div class="check">
+                  <span>&#x2713;</span> &#x442;&#x43E;&#x447;&#x43D;&#x435;
+                  &#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x44E;&#x432;&#x430;&#x43D;&#x43D;&#x44F;
+                  &#x444;&#x43E;&#x440;&#x43C;&#x438;
+                  &#x431;&#x440;&#x456;&#x432;
+                </div>
+                <div class="check">
+                  <span>&#x2713;</span>
+                  &#x43F;&#x456;&#x434;&#x431;&#x456;&#x440;
+                  &#x43A;&#x43E;&#x43B;&#x44C;&#x43E;&#x440;&#x443;
+                  &#x434;&#x43E;
+                  &#x43A;&#x43E;&#x43B;&#x44C;&#x43E;&#x440;&#x443;
+                  &#x448;&#x43A;&#x456;&#x440;&#x438; &#x442;&#x430;
+                  &#x43D;&#x430;&#x433;&#x43E;&#x434;&#x438;
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="intro-img">
+            <img
+              src="101782_1.jpg"
+              alt="Makija&#x17C; Oksi&amp;Ola Nowogard"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="alt">
+        <div class="wrap">
+          <div lang-block data-block="pl" class="active">
+            <div class="sec-head">
+              <span class="tag">Rodzaje us&#x142;ug</span>
+              <h2>Makija&#x17C; i brwi dla ka&#x17C;dej okazji</h2>
+              <p class="lead">
+                Codzienny blask, wieczorowy szyf, wyj&#x105;tkowy dzie&#x144;
+                &#x2014; dobierzemy styl makija&#x17C;u i stylizacj&#x119; brwi
+                do Twoich potrzeb.
+              </p>
+            </div>
+            <div class="services-grid">
+              <div class="service">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
+                <h3>Makija&#x17C; dzienny</h3>
+                <p>
+                  Lekki, naturalny makija&#x17C; na co dzie&#x144;.
+                  Podkre&#x15B;la urod&#x119; bez efektu
+                  przeci&#x105;&#x17C;enia &#x2014;
+                  &#x15B;wie&#x17C;o&#x15B;&#x107; i elegancja przez ca&#x142;y
+                  dzie&#x144;.
+                </p>
+              </div>
+              <div class="service">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+                <h3>Makija&#x17C; wieczorowy</h3>
+                <p>
+                  Wyrazisty makija&#x17C; na wyjazdy i specjalne okazje. Smoky
+                  eye, intensywne usta, precyzyjne kreski &#x2014; wszystko z
+                  klas&#x105;.
+                </p>
+              </div>
+              <div class="service">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <h3>Makija&#x17C; &#x15B;lubny</h3>
+                <p>
+                  Trwa&#x142;y makija&#x17C; na najwa&#x17C;niejszy dzie&#x144;.
+                  Odporna kompozycja, kt&#xF3;ra wygl&#x105;da idealnie na
+                  zdj&#x119;ciach i przetrwa wzruszenie.
+                </p>
+              </div>
+              <div class="service">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div>
+                <h3>Stylizacja brwi</h3>
+                <p>
+                  Modelowanie kszta&#x142;tu, laminacja, henna i regulacja.
+                  Brwi, kt&#xF3;re oprawiaj&#x105; twarz i nadaj&#x105;
+                  spojrzeniu g&#x142;&#x119;bi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div lang-block data-block="ua">
+            <div class="sec-head">
+              <span class="tag"
+                >&#x412;&#x438;&#x434;&#x438;
+                &#x43F;&#x43E;&#x441;&#x43B;&#x443;&#x433;</span
+              >
+              <h2>
+                &#x41C;&#x430;&#x43A;&#x456;&#x44F;&#x436; &#x456;
+                &#x431;&#x440;&#x43E;&#x432;&#x438; &#x434;&#x43B;&#x44F;
+                &#x43A;&#x43E;&#x436;&#x43D;&#x43E;&#x457;
+                &#x43D;&#x430;&#x433;&#x43E;&#x434;&#x438;
+              </h2>
+              <p class="lead">
+                &#x429;&#x43E;&#x434;&#x435;&#x43D;&#x43D;&#x435;
+                &#x441;&#x456;&#x44F;&#x439;&#x432;&#x43E;,
+                &#x432;&#x435;&#x447;&#x456;&#x440;&#x43D;&#x44F;
+                &#x435;&#x43B;&#x435;&#x433;&#x430;&#x43D;&#x442;&#x43D;&#x456;&#x441;&#x442;&#x44C;,
+                &#x43E;&#x441;&#x43E;&#x431;&#x43B;&#x438;&#x432;&#x438;&#x439;
+                &#x434;&#x435;&#x43D;&#x44C; &#x2014;
+                &#x43F;&#x456;&#x434;&#x431;&#x435;&#x440;&#x435;&#x43C;&#x43E;
+                &#x441;&#x442;&#x438;&#x43B;&#x44C;
+                &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;&#x443; &#x456;
+                &#x441;&#x442;&#x438;&#x43B;&#x456;&#x437;&#x430;&#x446;&#x456;&#x44E;
+                &#x431;&#x440;&#x456;&#x432; &#x43F;&#x456;&#x434;
+                &#x412;&#x430;&#x448;&#x456;
+                &#x43F;&#x43E;&#x442;&#x440;&#x435;&#x431;&#x438;.
+              </p>
+            </div>
+            <div class="services-grid">
+              <div class="service">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
+                <h3>
+                  &#x414;&#x435;&#x43D;&#x43D;&#x438;&#x439;
+                  &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;
+                </h3>
+                <p>
+                  &#x41B;&#x435;&#x433;&#x43A;&#x438;&#x439;,
+                  &#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x438;&#x439;
+                  &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436; &#x43D;&#x430;
+                  &#x449;&#x43E;&#x434;&#x435;&#x43D;&#x44C;.
+                  &#x41F;&#x456;&#x434;&#x43A;&#x440;&#x435;&#x441;&#x43B;&#x44E;&#x454;
+                  &#x432;&#x440;&#x430;&#x433;&#x443; &#x431;&#x435;&#x437;
+                  &#x43D;&#x430;&#x432;&#x430;&#x43D;&#x442;&#x430;&#x436;&#x435;&#x43D;&#x43D;&#x44F;
+                  &#x2014;
+                  &#x441;&#x432;&#x456;&#x436;&#x456;&#x441;&#x442;&#x44C;
+                  &#x456;
+                  &#x435;&#x43B;&#x435;&#x433;&#x430;&#x43D;&#x442;&#x43D;&#x456;&#x441;&#x442;&#x44C;
+                  &#x432;&#x435;&#x441;&#x44C; &#x434;&#x435;&#x43D;&#x44C;.
+                </p>
+              </div>
+              <div class="service">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+                <h3>
+                  &#x412;&#x435;&#x447;&#x456;&#x440;&#x43D;&#x456;&#x439;
+                  &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;
+                </h3>
+                <p>
+                  &#x412;&#x438;&#x440;&#x430;&#x437;&#x43D;&#x438;&#x439;
+                  &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;
+                  &#x434;&#x43B;&#x44F;
+                  &#x43E;&#x441;&#x43E;&#x431;&#x43B;&#x438;&#x432;&#x438;&#x445;
+                  &#x432;&#x438;&#x43F;&#x430;&#x434;&#x43A;&#x456;&#x432;.
+                  Smoky eye,
+                  &#x456;&#x43D;&#x442;&#x435;&#x43D;&#x441;&#x438;&#x432;&#x43D;&#x456;
+                  &#x433;&#x443;&#x431;&#x438;,
+                  &#x442;&#x43E;&#x447;&#x43D;&#x456;
+                  &#x441;&#x442;&#x440;&#x456;&#x43B;&#x43A;&#x438; &#x2014;
+                  &#x432;&#x441;&#x435; &#x437;
+                  &#x43A;&#x43B;&#x430;&#x441;&#x43E;&#x43C;.
+                </p>
+              </div>
+              <div class="service">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <h3>
+                  &#x412;&#x435;&#x441;&#x456;&#x43B;&#x44C;&#x43D;&#x438;&#x439;
+                  &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;
+                </h3>
+                <p>
+                  &#x421;&#x442;&#x456;&#x439;&#x43A;&#x438;&#x439;
+                  &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436; &#x43D;&#x430;
+                  &#x43D;&#x430;&#x439;&#x432;&#x430;&#x436;&#x43B;&#x438;&#x432;&#x456;&#x448;&#x438;&#x439;
+                  &#x434;&#x435;&#x43D;&#x44C;.
+                  &#x412;&#x438;&#x442;&#x440;&#x438;&#x43C;&#x430;&#x454;
+                  &#x456; &#x441;&#x43B;&#x44C;&#x43E;&#x437;&#x438;, &#x456;
+                  &#x434;&#x43E;&#x432;&#x433;&#x456;
+                  &#x433;&#x43E;&#x434;&#x438;&#x43D;&#x438;
+                  &#x441;&#x432;&#x44F;&#x442;&#x430; &#x2014; &#x456;
+                  &#x432;&#x438;&#x433;&#x43B;&#x44F;&#x434;&#x430;&#x454;
+                  &#x456;&#x434;&#x435;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;
+                  &#x43D;&#x430; &#x444;&#x43E;&#x442;&#x43E;.
+                </p>
+              </div>
+              <div class="service">
+                <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div>
+                <h3>
+                  &#x421;&#x442;&#x438;&#x43B;&#x456;&#x437;&#x430;&#x446;&#x456;&#x44F;
+                  &#x431;&#x440;&#x456;&#x432;
+                </h3>
+                <p>
+                  &#x41C;&#x43E;&#x434;&#x435;&#x43B;&#x44E;&#x432;&#x430;&#x43D;&#x43D;&#x44F;
+                  &#x444;&#x43E;&#x440;&#x43C;&#x438;,
+                  &#x43B;&#x430;&#x43C;&#x456;&#x43D;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F;,
+                  &#x445;&#x43D;&#x430; &#x456;
+                  &#x43A;&#x43E;&#x440;&#x435;&#x43A;&#x446;&#x456;&#x44F;.
+                  &#x411;&#x440;&#x43E;&#x432;&#x438;, &#x44F;&#x43A;&#x456;
+                  &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x44E;&#x44E;&#x442;&#x44C;
+                  &#x43E;&#x431;&#x43B;&#x438;&#x447;&#x447;&#x44F; &#x456;
+                  &#x43D;&#x430;&#x434;&#x430;&#x44E;&#x442;&#x44C;
+                  &#x43F;&#x43E;&#x433;&#x43B;&#x44F;&#x434;&#x443;
+                  &#x433;&#x43B;&#x438;&#x431;&#x438;&#x43D;&#x438;.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cennik">
+        <div class="wrap">
+          <div lang-block data-block="pl" class="active">
+            <div class="sec-head">
+              <span class="tag">Cennik</span>
+              <h2>Ceny makija&#x17C;u i brwi</h2>
+              <p class="lead">
+                Ceny orientacyjne. Ostateczna cena mo&#x17C;e
+                zale&#x17C;e&#x107; od z&#x142;o&#x17C;ono&#x15B;ci stylizacji i
+                u&#x17C;ytych produkt&#xF3;w.
+              </p>
+            </div>
+            <div class="price-box">
+              <div class="row">
+                <div>
+                  <b>Makija&#x17C; dzienny</b
+                  ><small>naturalny, lekki, na co dzie&#x144;</small>
+                </div>
+                <div class="price">od 120 z&#x142;</div>
+              </div>
+              <div class="row">
+                <div>
+                  <b>Makija&#x17C; wieczorowy / okoliczno&#x15B;ciowy</b
+                  ><small>wyrazisty, na imprezy i wyj&#x15B;cia</small>
+                </div>
+                <div class="price">od 160 z&#x142;</div>
+              </div>
+              <div class="row">
+                <div>
+                  <b>Makija&#x17C; &#x15B;lubny &#x2014; pr&#xF3;bny</b
+                  ><small>pr&#xF3;ba przed dniem &#x15B;lubu</small>
+                </div>
+                <div class="price">od 200 z&#x142;</div>
+              </div>
+              <div class="row">
+                <div>
+                  <b
+                    >Makija&#x17C; &#x15B;lubny &#x2014; dzie&#x144;
+                    &#x15B;lubu</b
+                  ><small>trwa&#x142;y, odporny na wzruszenia</small>
+                </div>
+                <div class="price">od 250 z&#x142;</div>
+              </div>
+              <div class="row">
+                <div>
+                  <b>Stylizacja brwi &#x2014; modelowanie</b
+                  ><small>kszta&#x142;t, regulacja i wyko&#x144;czenie</small>
+                </div>
+                <div class="price">od 50 z&#x142;</div>
+              </div>
+              <div class="row">
+                <div>
+                  <b>Laminacja brwi</b
+                  ><small
+                    >uniesienie, g&#x119;sto&#x15B;&#x107; i utrwalenie na
+                    6&#x2013;8 tygodni</small
+                  >
+                </div>
+                <div class="price">od 120 z&#x142;</div>
+              </div>
+              <div class="row">
+                <div>
+                  <b>Henna brwi</b
+                  ><small>intensywny kolor, wyra&#x17A;ny kontur</small>
+                </div>
+                <div class="price">od 60 z&#x142;</div>
+              </div>
+              <div class="row">
+                <div>
+                  <b>Regulacja + henna brwi</b
+                  ><small>modelowanie i zabarwienie w jednym</small>
+                </div>
+                <div class="price">od 80 z&#x142;</div>
+              </div>
+            </div>
+          </div>
+          <div lang-block data-block="ua">
+            <div class="sec-head">
+              <span class="tag">&#x426;&#x456;&#x43D;&#x438;</span>
+              <h2>
+                &#x426;&#x456;&#x43D;&#x438; &#x43D;&#x430;
+                &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436; &#x456;
+                &#x431;&#x440;&#x43E;&#x432;&#x438;
+              </h2>
+              <p class="lead">
+                &#x41E;&#x440;&#x456;&#x454;&#x43D;&#x442;&#x43E;&#x432;&#x43D;&#x456;
+                &#x446;&#x456;&#x43D;&#x438;.
+                &#x41E;&#x441;&#x442;&#x430;&#x442;&#x43E;&#x447;&#x43D;&#x430;
+                &#x446;&#x456;&#x43D;&#x430; &#x43C;&#x43E;&#x436;&#x435;
+                &#x437;&#x430;&#x43B;&#x435;&#x436;&#x430;&#x442;&#x438;
+                &#x432;&#x456;&#x434;
+                &#x441;&#x43A;&#x43B;&#x430;&#x434;&#x43D;&#x43E;&#x441;&#x442;&#x456;
+                &#x441;&#x442;&#x438;&#x43B;&#x456;&#x437;&#x430;&#x446;&#x456;&#x457;
+                &#x442;&#x430;
+                &#x432;&#x438;&#x43A;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x430;&#x43D;&#x438;&#x445;
+                &#x43F;&#x440;&#x43E;&#x434;&#x443;&#x43A;&#x442;&#x456;&#x432;.
+              </p>
+            </div>
+            <div class="price-box">
+              <div class="row">
+                <div>
+                  <b
+                    >&#x414;&#x435;&#x43D;&#x43D;&#x438;&#x439;
+                    &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;</b
+                  ><small
+                    >&#x43F;&#x440;&#x438;&#x440;&#x43E;&#x434;&#x43D;&#x438;&#x439;,
+                    &#x43B;&#x435;&#x433;&#x43A;&#x438;&#x439;, &#x43D;&#x430;
+                    &#x449;&#x43E;&#x434;&#x435;&#x43D;&#x44C;</small
+                  >
+                </div>
+                <div class="price">
+                  &#x432;&#x456;&#x434; 120 &#x437;&#x43B;
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <b
+                    >&#x412;&#x435;&#x447;&#x456;&#x440;&#x43D;&#x456;&#x439; /
+                    &#x441;&#x432;&#x44F;&#x442;&#x43A;&#x43E;&#x432;&#x438;&#x439;
+                    &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;</b
+                  ><small
+                    >&#x432;&#x438;&#x440;&#x430;&#x437;&#x43D;&#x438;&#x439;,
+                    &#x434;&#x43B;&#x44F;
+                    &#x432;&#x438;&#x445;&#x43E;&#x434;&#x456;&#x432; &#x456;
+                    &#x441;&#x432;&#x44F;&#x442;</small
+                  >
+                </div>
+                <div class="price">
+                  &#x432;&#x456;&#x434; 160 &#x437;&#x43B;
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <b
+                    >&#x412;&#x435;&#x441;&#x456;&#x43B;&#x44C;&#x43D;&#x438;&#x439;
+                    &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436; &#x2014;
+                    &#x43F;&#x440;&#x43E;&#x431;&#x43D;&#x438;&#x439;</b
+                  ><small
+                    >&#x440;&#x435;&#x43F;&#x435;&#x442;&#x438;&#x446;&#x456;&#x44F;
+                    &#x43F;&#x435;&#x440;&#x435;&#x434;
+                    &#x432;&#x435;&#x441;&#x456;&#x43B;&#x43B;&#x44F;&#x43C;</small
+                  >
+                </div>
+                <div class="price">
+                  &#x432;&#x456;&#x434; 200 &#x437;&#x43B;
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <b
+                    >&#x412;&#x435;&#x441;&#x456;&#x43B;&#x44C;&#x43D;&#x438;&#x439;
+                    &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436; &#x2014;
+                    &#x434;&#x435;&#x43D;&#x44C;
+                    &#x432;&#x435;&#x441;&#x456;&#x43B;&#x43B;&#x44F;</b
+                  ><small
+                    >&#x441;&#x442;&#x456;&#x439;&#x43A;&#x438;&#x439;,
+                    &#x432;&#x438;&#x442;&#x440;&#x438;&#x43C;&#x430;&#x454;
+                    &#x434;&#x43E;&#x432;&#x433;&#x456;
+                    &#x433;&#x43E;&#x434;&#x438;&#x43D;&#x438;</small
+                  >
+                </div>
+                <div class="price">
+                  &#x432;&#x456;&#x434; 250 &#x437;&#x43B;
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <b
+                    >&#x421;&#x442;&#x438;&#x43B;&#x456;&#x437;&#x430;&#x446;&#x456;&#x44F;
+                    &#x431;&#x440;&#x456;&#x432; &#x2014;
+                    &#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x44E;&#x432;&#x430;&#x43D;&#x43D;&#x44F;</b
+                  ><small
+                    >&#x444;&#x43E;&#x440;&#x43C;&#x430;,
+                    &#x43A;&#x43E;&#x440;&#x435;&#x43A;&#x446;&#x456;&#x44F;
+                    &#x456;
+                    &#x43E;&#x444;&#x43E;&#x440;&#x43C;&#x43B;&#x435;&#x43D;&#x43D;&#x44F;</small
+                  >
+                </div>
+                <div class="price">&#x432;&#x456;&#x434; 50 &#x437;&#x43B;</div>
+              </div>
+              <div class="row">
+                <div>
+                  <b
+                    >&#x41B;&#x430;&#x43C;&#x456;&#x43D;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F;
+                    &#x431;&#x440;&#x456;&#x432;</b
+                  ><small
+                    >&#x43F;&#x456;&#x434;&#x43D;&#x44F;&#x442;&#x442;&#x44F;,
+                    &#x433;&#x443;&#x441;&#x442;&#x43E;&#x442;&#x430; &#x456;
+                    &#x444;&#x456;&#x43A;&#x441;&#x430;&#x446;&#x456;&#x44F;
+                    &#x43D;&#x430; 6&#x2013;8
+                    &#x442;&#x438;&#x436;&#x43D;&#x456;&#x432;</small
+                  >
+                </div>
+                <div class="price">
+                  &#x432;&#x456;&#x434; 120 &#x437;&#x43B;
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <b
+                    >&#x425;&#x43D;&#x430; &#x434;&#x43B;&#x44F;
+                    &#x431;&#x440;&#x456;&#x432;</b
+                  ><small
+                    >&#x456;&#x43D;&#x442;&#x435;&#x43D;&#x441;&#x438;&#x432;&#x43D;&#x438;&#x439;
+                    &#x43A;&#x43E;&#x43B;&#x456;&#x440;,
+                    &#x432;&#x438;&#x440;&#x430;&#x437;&#x43D;&#x438;&#x439;
+                    &#x43A;&#x43E;&#x43D;&#x442;&#x443;&#x440;</small
+                  >
+                </div>
+                <div class="price">&#x432;&#x456;&#x434; 60 &#x437;&#x43B;</div>
+              </div>
+              <div class="row">
+                <div>
+                  <b
+                    >&#x41A;&#x43E;&#x440;&#x435;&#x43A;&#x446;&#x456;&#x44F; +
+                    &#x445;&#x43D;&#x430; &#x434;&#x43B;&#x44F;
+                    &#x431;&#x440;&#x456;&#x432;</b
+                  ><small
+                    >&#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x44E;&#x432;&#x430;&#x43D;&#x43D;&#x44F;
+                    &#x456;
+                    &#x43F;&#x456;&#x434;&#x444;&#x430;&#x440;&#x431;&#x43E;&#x432;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F;
+                    &#x432; &#x43E;&#x434;&#x43D;&#x43E;&#x43C;&#x443;</small
+                  >
+                </div>
+                <div class="price">&#x432;&#x456;&#x434; 80 &#x437;&#x43B;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="galeria" class="alt">
+        <div class="wrap">
+          <div lang-block data-block="pl" class="active">
+            <div class="sec-head">
+              <span class="tag">Galeria</span>
+              <h2>Nasze prace</h2>
+              <p class="lead">
+                Makija&#x17C;e i stylizacje brwi wykonane w salonie. Kliknij
+                zdj&#x119;cie, &#x17C;eby powi&#x119;kszy&#x107;.
+              </p>
+            </div>
+          </div>
+          <div lang-block data-block="ua">
+            <div class="sec-head">
+              <span class="tag"
+                >&#x413;&#x430;&#x43B;&#x435;&#x440;&#x435;&#x44F;</span
+              >
+              <h2>
+                &#x41D;&#x430;&#x448;&#x456;
+                &#x440;&#x43E;&#x431;&#x43E;&#x442;&#x438;
+              </h2>
+              <p class="lead">
+                &#x41C;&#x430;&#x43A;&#x456;&#x44F;&#x436;&#x456; &#x442;&#x430;
+                &#x441;&#x442;&#x438;&#x43B;&#x456;&#x437;&#x430;&#x446;&#x456;&#x457;
+                &#x431;&#x440;&#x456;&#x432;,
+                &#x432;&#x438;&#x43A;&#x43E;&#x43D;&#x430;&#x43D;&#x456; &#x432;
+                &#x441;&#x430;&#x43B;&#x43E;&#x43D;&#x456;.
+                &#x41D;&#x430;&#x442;&#x438;&#x441;&#x43D;&#x456;&#x442;&#x44C;
+                &#x43D;&#x430; &#x444;&#x43E;&#x442;&#x43E;,
+                &#x449;&#x43E;&#x431;
+                &#x437;&#x431;&#x456;&#x43B;&#x44C;&#x448;&#x438;&#x442;&#x438;.
+              </p>
+            </div>
+          </div>
+          <div class="gallery">
+            <div class="gitem">
+              <img
+                src="101782_1.jpg"
+                alt="Makija&#x17C; Nowogard"
+                loading="lazy"
+              />
+            </div>
+            <div class="gitem">
+              <img
+                src="1769422585-make-up.jpg"
+                alt="Makija&#x17C;"
+                loading="lazy"
+              />
+            </div>
+            <div class="gitem">
+              <img
+                src="1769423016-legkyi-make-up.jpg"
+                alt="Lekki makija&#x17C;"
+                loading="lazy"
+              />
+            </div>
+            <div class="gitem">
+              <img
+                src="1769423619-vozrastnoy-makiyazh.jpg"
+                alt="Makija&#x17C; elegancki"
+                loading="lazy"
+              />
+            </div>
+            <div class="gitem">
+              <img
+                src="2026-05-10_172111.jpg"
+                alt="Stylizacja brwi"
+                loading="lazy"
+              />
+            </div>
+            <div class="gitem">
+              <img
+                src="e54d1206380b3390ab610b359c2cd832.jpg"
+                alt="Brwi"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontakt">
+        <div class="wrap">
+          <div class="cta">
+            <div lang-block data-block="pl" class="active">
+              <span class="tag">Rezerwacja</span>
+              <h2>Um&#xF3;w makija&#x17C; w Oksi&amp;Ola</h2>
+              <p>
+                Napisz lub zadzwo&#x144;. Dobierzemy styl makija&#x17C;u do
+                okazji i Twoich preferencji.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-g" href="tel:+48732723765">Telefon</a>
+                <a
+                  class="btn btn-g"
+                  href="https://wa.me/48732723765"
+                  target="_blank"
+                  rel="noopener"
+                  >WhatsApp</a
+                >
+                <a
+                  class="btn btn-o"
+                  href="https://facebook.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >Facebook</a
+                >
+                <a class="btn btn-o" href="https://www.instagram.com/shapranolga_?igsh=ZHVidWR1NWE0MzZ4" target="_blank" rel="noopener">Instagram</a>
+              </div>
+            </div>
+            <div lang-block data-block="ua">
+              <span class="tag">&#x417;&#x430;&#x43F;&#x438;&#x441;</span>
+              <h2>
+                &#x417;&#x430;&#x43F;&#x438;&#x448;&#x456;&#x442;&#x44C;&#x441;&#x44F;
+                &#x43D;&#x430; &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;
+                &#x432; Oksi&amp;Ola
+              </h2>
+              <p>
+                &#x41D;&#x430;&#x43F;&#x438;&#x448;&#x456;&#x442;&#x44C;
+                &#x430;&#x431;&#x43E;
+                &#x437;&#x430;&#x442;&#x435;&#x43B;&#x435;&#x444;&#x43E;&#x43D;&#x443;&#x439;&#x442;&#x435;.
+                &#x41F;&#x456;&#x434;&#x431;&#x435;&#x440;&#x435;&#x43C;&#x43E;
+                &#x441;&#x442;&#x438;&#x43B;&#x44C;
+                &#x43C;&#x430;&#x43A;&#x456;&#x44F;&#x436;&#x443; &#x434;&#x43E;
+                &#x43D;&#x430;&#x433;&#x43E;&#x434;&#x438; &#x442;&#x430;
+                &#x412;&#x430;&#x448;&#x438;&#x445;
+                &#x432;&#x43F;&#x43E;&#x434;&#x43E;&#x431;&#x430;&#x43D;&#x44C;.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-g" href="tel:+48732723765"
+                  >&#x422;&#x435;&#x43B;&#x435;&#x444;&#x43E;&#x43D;</a
+                >
+                <a
+                  class="btn btn-g"
+                  href="https://wa.me/48732723765"
+                  target="_blank"
+                  rel="noopener"
+                  >WhatsApp</a
+                >
+                <a
+                  class="btn btn-o"
+                  href="https://facebook.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >Facebook</a
+                >
+                <a class="btn btn-o" href="https://www.instagram.com/shapranolga_?igsh=ZHVidWR1NWE0MzZ4" target="_blank" rel="noopener">Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <b>Oksi<span>&amp;</span>Ola</b>
+        <p>
+          Salon Nowogard &middot; Manicure &middot; Pedicure &middot;
+          Rz&#x119;sy &middot; Makija&#x17C; &middot; Brwi
+        </p>
+      </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+      <span class="close" id="close">&times;</span>
+      <img id="lightboxImg" alt="" />
+    </div>
+
+    <script>
+      const hdr = document.getElementById("hdr");
+      var _hy=0,_ht=false;
+      window.addEventListener("scroll", function(){
+        if(!_ht){ window.requestAnimationFrame(function(){
+          var y=window.scrollY;
+          hdr.classList.toggle("scrolled", y>60);
+          if(y>120){ if(y>_hy+8){ hdr.style.transform="translateY(-100%)"; } else if(y<_hy-8){ hdr.style.transform=""; } } else { hdr.style.transform=""; }
+          _hy=y; _ht=false;
+        }); _ht=true; }
+      }, {passive:true});
+
+      const lb = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lightboxImg");
+      document.querySelectorAll(".gitem img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lbImg.src = img.src;
+          lb.classList.add("open");
+        });
+      });
+      document
+        .getElementById("close")
+        .addEventListener("click", () => lb.classList.remove("open"));
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb) lb.classList.remove("open");
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") lb.classList.remove("open");
+      });
+
+      // lang switcher
+      (function () {
+        var saved = localStorage.getItem("oksiola-lang") || "pl";
+        document.querySelectorAll(".langs button").forEach(function (btn) {
+          btn.classList.toggle("active", btn.dataset.lang === saved);
+        });
+        document.querySelectorAll("[lang-block]").forEach(function (el) {
+          el.classList.toggle("active", el.dataset.block === saved);
+        });
+        document.querySelectorAll(".langs button").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var l = btn.dataset.lang;
+            localStorage.setItem("oksiola-lang", l);
+            document.querySelectorAll(".langs button").forEach(function (b) {
+              b.classList.toggle("active", b === btn);
+            });
+            document.querySelectorAll("[lang-block]").forEach(function (el) {
+              el.classList.toggle("active", el.dataset.block === l);
+            });
+          });
+        });
+      })();
+    </script>
+    <script>
+    (function(){
+      var btn=document.getElementById('hbg');
+      var nav=document.getElementById('mnav');
+      if(btn&&nav){
+        btn.addEventListener('click',function(){var open=btn.classList.toggle('op');btn.setAttribute('aria-expanded',open);nav.classList.toggle('show',open)});
+        document.addEventListener('click',function(e){if(!btn.contains(e.target)&&!nav.contains(e.target)){btn.classList.remove('op');btn.setAttribute('aria-expanded','false');nav.classList.remove('show')}});
+      }
+    })();
+    </script>
+  </body>
+</html>
+
