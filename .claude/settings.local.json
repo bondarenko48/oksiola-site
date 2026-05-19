@@ -8,7 +8,8 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git remote *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(Get-Content \"c:\\\\Users\\\\Vik\\\\Documents\\\\Oksi&Ola\\\\pedicure\\\\pedicure_premium_oksi_ola.html\" -TotalCount 20)"
     ]
   }
 }
