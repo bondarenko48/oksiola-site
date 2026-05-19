@@ -1995,12 +1995,12 @@ a.srv-card:hover .srv-more {
 =========================================================== */
 @media (max-width: 600px) {
   #hero {
-    background-position: 65% top;
+    background-position: 65% 18%;
   }
 }
 @media (max-width: 430px) {
   #hero {
-    background-position: 60% top;
+    background-position: 60% 15%;
   }
 }
 

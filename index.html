@@ -260,7 +260,9 @@
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.9);
         text-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
-        transition: color 0.3s, text-shadow 0.3s;
+        transition:
+          color 0.3s,
+          text-shadow 0.3s;
         position: relative;
       }
       .nav-ul a::after {
@@ -310,7 +312,9 @@
         color: rgba(255, 255, 255, 0.75);
         padding: 5px 9px;
         border-radius: 4px;
-        transition: color 0.3s, background 0.3s;
+        transition:
+          color 0.3s,
+          background 0.3s;
       }
       .ls-btn.act {
         color: var(--gold-lt);
@@ -427,7 +431,7 @@
       .hero-ov {
         position: absolute;
         inset: 0;
-        background: rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.1);
         opacity: 1;
       }
       .hero-cnt {
@@ -449,27 +453,38 @@
       }
       .hero-h1 {
         font-family: "Cormorant Garamond", var(--ff-s), serif;
-        font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+        font-size: clamp(2.8rem, 6.8vw, 5.8rem);
         font-weight: 300;
-        line-height: 1.3;
-        margin-bottom: 48px;
+        line-height: 1.2;
+        margin-bottom: 52px;
+        letter-spacing: -0.01em;
         opacity: 0;
         animation: fu 0.8s 0.4s forwards;
       }
+      /* top line — refined dusty rose, wide editorial tracking, featherlight */
       .hero-h1 span {
         display: block;
-        color: #cc8ba8;
-        letter-spacing: 0.14em;
-        text-shadow: 0 1px 20px rgba(0, 0, 0, 0.45);
+        color: rgba(216, 174, 185, 0.93);
+        font-weight: 300;
+        font-size: 0.88em;
+        letter-spacing: 0.28em;
+        text-shadow:
+          0 0 80px rgba(255, 175, 195, 0.18),
+          0 1px 6px rgba(0, 0, 0, 0.32);
       }
+      /* bottom line — warm pearl ivory, italic, luminous glow */
       .hero-h1 em {
         display: block;
         font-style: italic;
-        font-weight: 600;
-        color: #f5ede7;
-        letter-spacing: 0.06em;
-        margin-top: 0.1em;
-        text-shadow: 0 2px 28px rgba(0, 0, 0, 0.42), 0 1px 5px rgba(0, 0, 0, 0.3);
+        font-weight: 400;
+        font-size: 1.1em;
+        color: rgba(252, 246, 238, 0.97);
+        letter-spacing: 0.1em;
+        margin-top: 0.12em;
+        text-shadow:
+          0 0 100px rgba(255, 238, 210, 0.38),
+          0 2px 22px rgba(0, 0, 0, 0.48),
+          0 1px 4px rgba(0, 0, 0, 0.24);
       }
       .hero-sub {
         font-size: clamp(0.95rem, 1.5vw, 1.1rem);
@@ -1813,12 +1828,29 @@
           max-width: 100%;
         }
         .hero-h1 {
-          font-size: clamp(2rem, 7.5vw, 3rem);
+          font-size: clamp(1.85rem, 7vw, 2.8rem);
           margin-bottom: 28px;
+          letter-spacing: -0.01em;
+        }
+        .hero-h1 span {
+          letter-spacing: 0.18em;
+          font-size: 0.9em;
+        }
+        .hero-h1 em {
+          letter-spacing: 0.06em;
+          font-size: 1.06em;
         }
         .hero-btns {
           flex-direction: column;
           align-items: center;
+          width: 100%;
+          gap: 12px;
+        }
+        .hero-btns .btn {
+          width: 100%;
+          max-width: 288px;
+          text-align: center;
+          display: block;
         }
         .btn {
           width: 100%;
@@ -1841,7 +1873,11 @@
           max-width: 90px;
         }
         .hero-h1 {
-          font-size: clamp(1.75rem, 7vw, 2.4rem);
+          font-size: clamp(1.65rem, 7.5vw, 2.2rem);
+          margin-bottom: 24px;
+        }
+        .hero-h1 span {
+          letter-spacing: 0.14em;
         }
         .hero-sub {
           font-size: 0.9rem;
@@ -2095,7 +2131,8 @@
         border: 1px solid rgba(185, 142, 218, 0.22);
         border-radius: 32px;
         padding: 72px 80px 80px;
-        box-shadow: 0 20px 90px rgba(155, 98, 205, 0.14),
+        box-shadow:
+          0 20px 90px rgba(155, 98, 205, 0.14),
           inset 0 2px 0 rgba(255, 255, 255, 0.88);
         text-align: center;
         max-width: 980px;
@@ -2187,7 +2224,8 @@
         font-size: clamp(3.2rem, 6vw, 5rem);
         font-weight: 400;
         color: #6a2558;
-        text-shadow: 0 0 48px rgba(155, 72, 140, 0.16),
+        text-shadow:
+          0 0 48px rgba(155, 72, 140, 0.16),
           0 2px 0 rgba(255, 255, 255, 0.4);
         line-height: 1.15;
         margin: 0;
@@ -2281,7 +2319,8 @@
         color: #fff;
         border: 1px solid rgba(255, 255, 255, 0.42);
         text-shadow: 0 1px 3px rgba(85, 28, 72, 0.22);
-        box-shadow: 0 6px 36px rgba(188, 98, 172, 0.46),
+        box-shadow:
+          0 6px 36px rgba(188, 98, 172, 0.46),
           inset 0 1.5px 0 rgba(255, 255, 255, 0.36),
           inset 0 -1px 0 rgba(0, 0, 0, 0.07);
       }
@@ -2294,7 +2333,8 @@
           #c87ebc 100%
         );
         transform: translateY(-2px);
-        box-shadow: 0 12px 44px rgba(188, 98, 172, 0.56),
+        box-shadow:
+          0 12px 44px rgba(188, 98, 172, 0.56),
           inset 0 1.5px 0 rgba(255, 255, 255, 0.36);
       }
       /* Secondary — large elegant glass with lilac border */
@@ -2304,7 +2344,8 @@
         -webkit-backdrop-filter: blur(18px);
         border: 1.5px solid rgba(170, 125, 212, 0.48);
         color: #7545a0;
-        box-shadow: 0 4px 24px rgba(158, 112, 215, 0.11),
+        box-shadow:
+          0 4px 24px rgba(158, 112, 215, 0.11),
           inset 0 1px 0 rgba(255, 255, 255, 0.84),
           inset 0 0 30px rgba(202, 172, 248, 0.07);
         transition: all 0.26s ease;
@@ -2314,7 +2355,8 @@
         border-color: rgba(155, 108, 200, 0.62);
         color: #592680;
         transform: translateY(-2px);
-        box-shadow: 0 9px 32px rgba(155, 105, 210, 0.24),
+        box-shadow:
+          0 9px 32px rgba(155, 105, 210, 0.24),
           inset 0 1px 0 rgba(255, 255, 255, 0.84);
       }
       /* Script helper text */
@@ -2360,6 +2402,20 @@
         }
       }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TKYQ4WQ53P"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-TKYQ4WQ53P");
+    </script>
   </head>
   <body>
     <!-- ═══════════════════════════════════════════
@@ -2604,8 +2660,17 @@
           <em data-i18n="h.l2">Nasza pasja.</em>
         </h1>
         <div class="hero-btns">
-          <a href="https://wa.me/48732723765" target="_blank" rel="noopener noreferrer" class="btn btn-g" data-i18n="h.cta">Umów wizytę</a>
-          <a href="tel:+48732723765" class="btn btn-o" data-i18n="h.call">Zadzwoń</a>
+          <a
+            href="https://wa.me/48732723765"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-g"
+            data-i18n="h.cta"
+            >Umów wizytę</a
+          >
+          <a href="tel:+48732723765" class="btn btn-o" data-i18n="h.call"
+            >Zadzwoń</a
+          >
         </div>
       </div>
       <div class="hero-scroll"><span></span></div>
@@ -2686,8 +2751,8 @@
             <h3 data-i18n="sv4.t">Us&#x142;ugi Fryzjerskie</h3>
             <p data-i18n="sv4.d">
               Strzy&#x17C;enie damskie i m&#x119;skie. Farbowanie
-              w&#x142;os&#xF3;w. Piel&#x119;gnacja w&#x142;os&#xF3;w,
-              keratyna i regeneracja na zimno.
+              w&#x142;os&#xF3;w. Piel&#x119;gnacja w&#x142;os&#xF3;w, keratyna i
+              regeneracja na zimno.
             </p>
             <span class="srv-more" data-i18n="srv.more"
               >Zobacz wi&#x119;cej &#x2192;</span
@@ -2719,9 +2784,9 @@
             </div>
             <h3 data-i18n="sv6.t">Regeneracja W&#x142;os&#xF3;w</h3>
             <p data-i18n="sv6.d">
-              Regeneracja w&#x142;os&#xF3;w na zimno. Wyg&#x142;adzenie,
-              blask i odbudowa &#x2014; w&#x142;osy od&#x17C;ywione i
-              jedwabiste na d&#x142;ugo.
+              Regeneracja w&#x142;os&#xF3;w na zimno. Wyg&#x142;adzenie, blask i
+              odbudowa &#x2014; w&#x142;osy od&#x17C;ywione i jedwabiste na
+              d&#x142;ugo.
             </p>
             <span class="srv-more" data-i18n="srv.more"
               >Zobacz wi&#x119;cej &#x2192;</span
@@ -3302,7 +3367,8 @@
                 ><span class="pr-val">od 280 zł</span>
               </div>
               <div class="pr-row">
-                <span class="pr-name" data-i18n="fr6">Regeneracja intensywna</span
+                <span class="pr-name" data-i18n="fr6"
+                  >Regeneracja intensywna</span
                 ><span class="pr-val">od 220 zł</span>
               </div>
               <div class="pr-row">
@@ -3351,7 +3417,8 @@
               </div>
               <p class="rev-txt" data-i18n="rv1">
                 Moje brwi nigdy nie wyglądały tak pięknie! Precyzja i dbałość o
-                każdy detal to coś, co wyróżnia ten salon. Polecam z całego serca!
+                każdy detal to coś, co wyróżnia ten salon. Polecam z całego
+                serca!
               </p>
               <div class="rev-auth">
                 <div class="rev-av">AW</div>
@@ -3368,7 +3435,8 @@
               </div>
               <p class="rev-txt" data-i18n="rv2">
                 Manicure hybrydowy utrzymał się ponad trzy tygodnie bez żadnych
-                odprysków. Ekipa super miła, atmosfera wyjątkowa. Na pewno wrócę!
+                odprysków. Ekipa super miła, atmosfera wyjątkowa. Na pewno
+                wrócę!
               </p>
               <div class="rev-auth">
                 <div class="rev-av">NK</div>
@@ -3462,15 +3530,33 @@
 
         <!-- ── Google Reviews CTA ── -->
         <div class="grev-wrap fi">
-
           <!-- Google badge -->
           <div class="grev-header">
             <div class="grev-g">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  fill="#4285F4"
+                />
+                <path
+                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  fill="#34A853"
+                />
+                <path
+                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                  fill="#FBBC05"
+                />
+                <path
+                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                  fill="#EA4335"
+                />
               </svg>
             </div>
             <div class="grev-meta">
@@ -3481,43 +3567,114 @@
 
           <!-- Heading + outlined heart -->
           <div class="grev-heading-wrap">
-            <h3 class="grev-title" data-i18n="grev.ttl">Opinie naszych gości</h3>
-            <svg class="grev-hico" width="56" height="52" viewBox="0 0 24 24" aria-hidden="true">
-              <defs><linearGradient id="gh2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eba0d2"/><stop offset="100%" stop-color="#b068c0"/></linearGradient></defs>
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="url(#gh2)" stroke-width="1.3" stroke-linejoin="round"/>
+            <h3 class="grev-title" data-i18n="grev.ttl">
+              Opinie naszych gości
+            </h3>
+            <svg
+              class="grev-hico"
+              width="56"
+              height="52"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="gh2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#eba0d2" />
+                  <stop offset="100%" stop-color="#b068c0" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.54L12 21.35z"
+                fill="none"
+                stroke="url(#gh2)"
+                stroke-width="1.3"
+                stroke-linejoin="round"
+              />
             </svg>
           </div>
 
           <!-- Decorative divider: lines + small heart -->
           <div class="grev-divider" aria-hidden="true">
             <span class="grev-div-line"></span>
-            <svg class="grev-div-heart" width="16" height="15" viewBox="0 0 24 24">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="#b090d0" stroke-width="1.8" stroke-linejoin="round"/>
+            <svg
+              class="grev-div-heart"
+              width="16"
+              height="15"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.54L12 21.35z"
+                fill="none"
+                stroke="#b090d0"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
             </svg>
             <span class="grev-div-line"></span>
           </div>
 
           <!-- Body text -->
           <div class="grev-desc">
-            <p data-i18n="grev.p1">Zobacz, co mówią o nas nasi goście w Google</p>
+            <p data-i18n="grev.p1">
+              Zobacz, co mówią o nas nasi goście w Google
+            </p>
           </div>
 
           <!-- Outlined lilac sparkle decorations -->
           <div class="grev-sparkles" aria-hidden="true">
-            <svg class="grev-sp" width="20" height="20" viewBox="0 0 24 24"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5Z" fill="none" stroke="#b090d0" stroke-width="1.2" stroke-linejoin="round"/></svg>
-            <svg class="grev-sp" width="26" height="26" viewBox="0 0 24 24"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5Z" fill="none" stroke="#b090d0" stroke-width="1.2" stroke-linejoin="round"/></svg>
-            <svg class="grev-sp" width="20" height="20" viewBox="0 0 24 24"><path d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5Z" fill="none" stroke="#b090d0" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            <svg class="grev-sp" width="20" height="20" viewBox="0 0 24 24">
+              <path
+                d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5Z"
+                fill="none"
+                stroke="#b090d0"
+                stroke-width="1.2"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <svg class="grev-sp" width="26" height="26" viewBox="0 0 24 24">
+              <path
+                d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5Z"
+                fill="none"
+                stroke="#b090d0"
+                stroke-width="1.2"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <svg class="grev-sp" width="20" height="20" viewBox="0 0 24 24">
+              <path
+                d="M12 2l1.5 8.5L22 12l-8.5 1.5L12 22l-1.5-8.5L2 12l8.5-1.5Z"
+                fill="none"
+                stroke="#b090d0"
+                stroke-width="1.2"
+                stroke-linejoin="round"
+              />
+            </svg>
           </div>
 
           <!-- Buttons — stacked full-width -->
           <div class="grev-btns">
-            <a href="https://maps.app.goo.gl/2A4YdjivmJD9aKsb8?g_st=ic" target="_blank" rel="noopener noreferrer" class="btn btn-g" data-i18n="grev.see">Zobacz opinie naszych gości</a>
-            <a href="https://g.page/r/CVXEMCy0FeBbEBI/review" target="_blank" rel="noopener noreferrer" class="btn btn-out" data-i18n="grev.add">Zostaw opinię</a>
+            <a
+              href="https://maps.app.goo.gl/2A4YdjivmJD9aKsb8?g_st=ic"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-g"
+              data-i18n="grev.see"
+              >Zobacz opinie naszych gości</a
+            >
+            <a
+              href="https://g.page/r/CVXEMCy0FeBbEBI/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-out"
+              data-i18n="grev.add"
+              >Zostaw opinię</a
+            >
           </div>
 
           <!-- Script footer text -->
-          <p class="grev-foot" data-i18n="grev.foot">Wasze słowa pomagają innym gościom wybrać nasz salon</p>
-
+          <p class="grev-foot" data-i18n="grev.foot">
+            Wasze słowa pomagają innym gościom wybrać nasz salon
+          </p>
         </div>
       </div>
     </section>
@@ -3612,9 +3769,7 @@
               <div>
                 <div class="con-lbl" data-i18n="cn.el">E-mail</div>
                 <div class="con-val">
-                  <a href="mailto:kontakt@oksiola.pl"
-                    >kontakt@oksiola.pl</a
-                  >
+                  <a href="mailto:kontakt@oksiola.pl">kontakt@oksiola.pl</a>
                 </div>
               </div>
             </div>
@@ -3818,8 +3973,7 @@
           "h.tag": "Ekskluzywny Salon Urody · Nowogard",
           "h.l1": "Twoje piękno.",
           "h.l2": "Nasza pasja.",
-          "h.sub":
-            "Fryzjer • Paznokcie • Stylizacja rzęs • Pielęgnacja włosów",
+          "h.sub": "Fryzjer • Paznokcie • Stylizacja rzęs • Pielęgnacja włosów",
           "h.cta": "Umów wizytę",
           "h.call": "Zadzwoń",
           "h.exp": "Zobacz usługi",
@@ -4029,8 +4183,7 @@
           "h.tag": "Ексклюзивний Салон Краси · Новогард",
           "h.l1": "Твоя краса.",
           "h.l2": "Наша пристрасть.",
-          "h.sub":
-            "Перукар • Нігті • Нарощування вій • Догляд за волоссям",
+          "h.sub": "Перукар • Нігті • Нарощування вій • Догляд за волоссям",
           "h.cta": "Записатися",
           "h.call": "Зателефонуйте",
           "h.exp": "Переглянути послуги",
@@ -4412,34 +4565,49 @@
         var startY = 0;
         var axisLocked = false;
 
-        grid.addEventListener("touchstart", function (e) {
-          startX = e.touches[0].clientX;
-          startY = e.touches[0].clientY;
-          axisLocked = false;
-        }, { passive: true });
+        grid.addEventListener(
+          "touchstart",
+          function (e) {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            axisLocked = false;
+          },
+          { passive: true },
+        );
 
-        grid.addEventListener("touchmove", function (e) {
-          if (axisLocked) return;
-          var dx = Math.abs(e.touches[0].clientX - startX);
-          var dy = Math.abs(e.touches[0].clientY - startY);
-          if (dy > dx) axisLocked = true;
-        }, { passive: true });
+        grid.addEventListener(
+          "touchmove",
+          function (e) {
+            if (axisLocked) return;
+            var dx = Math.abs(e.touches[0].clientX - startX);
+            var dy = Math.abs(e.touches[0].clientY - startY);
+            if (dy > dx) axisLocked = true;
+          },
+          { passive: true },
+        );
 
-        grid.addEventListener("touchend", function (e) {
-          if (axisLocked || window.innerWidth >= 768) return;
-          var dx = e.changedTouches[0].clientX - startX;
-          if (Math.abs(dx) > 42) goTo(dx < 0 ? cur + 1 : cur - 1);
-        }, { passive: true });
+        grid.addEventListener(
+          "touchend",
+          function (e) {
+            if (axisLocked || window.innerWidth >= 768) return;
+            var dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 42) goTo(dx < 0 ? cur + 1 : cur - 1);
+          },
+          { passive: true },
+        );
 
         dots.forEach(function (d, i) {
-          d.addEventListener("click", function () { goTo(i); });
+          d.addEventListener("click", function () {
+            goTo(i);
+          });
         });
 
-        window.addEventListener("resize", function () { goTo(cur); });
+        window.addEventListener("resize", function () {
+          goTo(cur);
+        });
 
         goTo(0);
       })();
-
     </script>
 
     <!-- ═══════════════════════════════════════════
