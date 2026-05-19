@@ -431,7 +431,12 @@
       .hero-ov {
         position: absolute;
         inset: 0;
-        background: rgba(255, 255, 255, 0.1);
+        background: linear-gradient(
+          170deg,
+          rgba(12, 4, 8, 0.22) 0%,
+          rgba(12, 4, 8, 0.06) 45%,
+          rgba(12, 4, 8, 0.28) 100%
+        );
         opacity: 1;
       }
       .hero-cnt {
@@ -450,6 +455,9 @@
         margin-bottom: 22px;
         opacity: 0;
         animation: fu 0.8s 0.2s forwards;
+      }
+      .hero-location {
+        display: none;
       }
       .hero-h1 {
         font-family: "Cormorant Garamond", var(--ff-s), serif;
@@ -2401,6 +2409,94 @@
           gap: 18px;
         }
       }
+
+      /* ============================================================
+         DESKTOP HERO POLISH — depth & readability (min-width: 921px)
+      ============================================================ */
+      @media (min-width: 921px) {
+        /* location label — Salon Urody • Nowogard */
+        .hero-location {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 18px;
+          font-family: "Montserrat", var(--ff-n), sans-serif;
+          font-size: 0.62rem;
+          font-weight: 300;
+          letter-spacing: 0.5em;
+          text-transform: uppercase;
+          color: rgba(224, 191, 146, 0.94);
+          margin-top: 24px;
+          margin-bottom: 36px;
+          text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28);
+          opacity: 0;
+          animation: fu 0.8s 0.15s forwards;
+        }
+        .hero-location::before,
+        .hero-location::after {
+          content: "";
+          flex: 0 0 44px;
+          height: 1px;
+          background: linear-gradient(
+            to var(--dir, right),
+            transparent,
+            rgba(224, 191, 146, 0.50)
+          );
+        }
+        .hero-location::before { --dir: right; }
+        .hero-location::after  { --dir: left;  }
+
+        /* subtitle prose — soft white lift */
+        .hero-sub {
+          color: rgba(255, 255, 255, 0.80);
+        }
+
+        /* headline top line (Twoje piękno.) — full opacity, crisper shadow */
+        .hero-h1 span {
+          color: rgba(216, 174, 185, 1);
+          text-shadow:
+            0 0 80px rgba(255, 175, 195, 0.22),
+            0 1px 8px rgba(0, 0, 0, 0.38);
+        }
+
+        /* headline bottom line (Nasza pasja.) — cinematic warm glow */
+        .hero-h1 em {
+          color: rgba(252, 246, 238, 1);
+          text-shadow:
+            0 0 100px rgba(255, 238, 210, 0.45),
+            0 2px 28px rgba(0, 0, 0, 0.52),
+            0 1px 6px rgba(0, 0, 0, 0.28);
+        }
+
+        /* header glassmorphism — slightly denser for legibility */
+        #hdr.sc {
+          background: rgba(255, 238, 248, 0.66);
+          backdrop-filter: blur(26px) saturate(180%) brightness(101%);
+          -webkit-backdrop-filter: blur(26px) saturate(180%) brightness(101%);
+          box-shadow:
+            0 2px 32px rgba(196, 148, 182, 0.18),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.55);
+          border-bottom-color: rgba(255, 210, 228, 0.48);
+        }
+
+        /* nav links over hero — stronger shadow so letters pop over the photo */
+        .nav-ul a {
+          text-shadow: 0 1px 8px rgba(0, 0, 0, 0.38);
+        }
+
+        /* Zadzwoń button — stronger border, readable text, gold-tinted hover */
+        .hero-btns .btn-o {
+          border: 1.5px solid rgba(255, 255, 255, 0.80);
+          text-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+        }
+        .hero-btns .btn-o:hover {
+          background: rgba(255, 255, 255, 0.12);
+          border-color: rgba(201, 168, 76, 0.70);
+          color: rgba(255, 255, 255, 1);
+          text-shadow: none;
+          transform: translateY(-2px);
+        }
+      }
     </style>
     <!-- Google tag (gtag.js) -->
     <script
@@ -2655,6 +2751,7 @@
     <section id="hero">
       <div class="hero-ov"></div>
       <div class="hero-cnt">
+        <p class="hero-location">Salon Urody&nbsp;•&nbsp;Nowogard</p>
         <h1 class="hero-h1">
           <span data-i18n="h.l1">Twoje piękno.</span>
           <em data-i18n="h.l2">Nasza pasja.</em>
@@ -3855,6 +3952,7 @@
                 rel="noopener"
                 data-i18n="cn.act.msg"
               >
+              
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path
                     d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.438 5.504 3.686 7.205V21l2.186-1.202A10.7 10.7 0 0012 20.486c5.523 0 10-4.144 10-9.243S17.523 2 12 2zm1.006 12.44l-2.547-2.718-4.97 2.718 5.467-5.805 2.611 2.718 4.906-2.718-5.467 5.805z"
